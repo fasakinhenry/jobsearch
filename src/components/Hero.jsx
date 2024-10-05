@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/24/outline";
 const Hero = () => {
   return (
-    <div className=" py-5 h-full">
+    <div className="py-5 h-full">
       <div className="container px-40">
         <div className="grid  place-items-start">
           <div className="grid py-6 max-w-5xl mx-auto">
