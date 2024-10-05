@@ -22,8 +22,8 @@ const Header = () => {
             </Link>
           </div>
           <div className="flex items-center gap-3">
-            <Button filled={true}>Sign Up</Button>
             <Button filled={false}>Login</Button>
+            <Button filled={true}>Sign Up</Button>
           </div>
         </div>
       </div>
