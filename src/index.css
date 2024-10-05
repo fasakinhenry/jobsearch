@@ -42,7 +42,7 @@ body {
 }
 
 .border-btn {
-  border: 3px solid var(--app-light-green);
+  border: 3px solid var(--app-dark-green);
 }
 
 .btn-color-hover:hover {
