@@ -1,8 +1,8 @@
 import { Header, Hero } from "../../components";
 const Landing = () => {
   return (
-    <div className="blue grid h-[100vh] w-[100vw] overflow-hidden">
-      <div className="grid justify-content-start">
+    <div className="blue h-[100vh] w-[100vw] overflow-hidden">
+      <div className="grid ">
         <Header />
         <Hero />
       </div>
