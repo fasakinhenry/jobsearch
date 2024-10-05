@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Landing } from "./pages/App";
-import NotFound from "./pages";
+import {NotFound} from "./pages";
 
 export default function App() {
   const router = createBrowserRouter(
