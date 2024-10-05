@@ -50,6 +50,9 @@ We welcome contributions to the JobSearch app! To contribute, follow these steps
 4. Push to the branch: `git push origin my-feature-branch`.
 5. Submit a pull request.
 
+> [!TIP]
+> Always use Conventional Commits style for the commit message
+
 ## License
 
 This project is proprietary and confidential. Unauthorized copying, distribution, or modification of this project, via any medium, is strictly prohibited. Only authorized personnel within the Startup are permitted to use and contribute to this project.
