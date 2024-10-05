@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('./styles/variables.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,4 +10,34 @@
     margin:  0;
     box-sizing: border-box;
     font-family: 'Poppins'
+}
+
+.dark-green {
+    background-color: var(--app-dark-green);
+}
+.light-green {
+    background-color: var(--app-light-green);
+}
+.blue {
+    background-color: var(--app-blue);
+}
+
+.btn-color {
+    background: linear-gradient(to right,var(--app-light-green),var(--app-dark-green));
+    transition: 0.5s ease-in-out;
+}
+
+.btn-color:hover {
+    background: linear-gradient(to left,var(--app-light-green),var(--app-dark-green));
+    transform: scale(1.06);
+}
+
+.border-btn {
+    border: 3px solid var(--app-light-green);
+}
+
+.btn-color-hover:hover {
+    background: linear-gradient(to right,var(--app-light-green),var(--app-dark-green));
+    transition: 0.5s ease-in-out;
+    transform: scale(1.06);
 }
