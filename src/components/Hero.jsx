@@ -7,10 +7,11 @@ const Hero = () => {
           <div className='grid py-6 max-w-5xl mx-auto'>
             <div className='text-center grid gap-8'>
               <h2 className='text-6xl font-extrabold'>
-                Job Opportunities at Your Fingertips.
+                Find your Dream Job today
               </h2>
               <p className='text-md'>
-                Navigate Your Future: Your Job Search Made Simple!
+                Explore thousands of job opportunities tailored to your skills
+                and preferences.
               </p>
             </div>
             <div className='py-5'>
