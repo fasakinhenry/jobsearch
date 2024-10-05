@@ -1,7 +1,10 @@
+import {Header} from "../../components";
 const Landing = () => {
   return (
-    <div>Landing</div>
-  )
-}
+    <div>
+      <Header />
+    </div>
+  );
+};
 
-export default Landing
+export default Landing;
