@@ -5,47 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('./assests/fonts/gilroy-bold/Gilroy-Regular.ttf') format('truetype');
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gilroy-bold';
-  src: url('./assests/fonts/gilroy-bold/Gilroy-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Helvetica';
-  src: url('./assests/fonts/helveticanowtext-black-demo.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Helvetica-bold';
-  src: url('./assests/fonts/helveticanowtext-bold-demo.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-.gilroy {
-  font-family: 'Gilroy', sans-serif;
-}
-.gilroy-bold {
-  font-family: 'Gilroy-bold', sans-serif;
-}
-
-.helvetica {
-  font-family: 'Helvetica', sans-serif;
-}
-.helvetica-bold {
-  font-family: 'Helvetica', sans-serif;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat';
 }
 
 body {
@@ -78,8 +42,7 @@ body {
 }
 
 .border-btn {
-  border: 2px solid var(--app-dark-green);
-  /* border: 2px solid white; */
+  border: 3px solid var(--app-light-green);
 }
 
 .btn-color-hover:hover {

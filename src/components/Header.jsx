@@ -3,10 +3,10 @@ import Button from './Button';
 
 const Header = () => {
   return (
-    <div className='gilroy py-10'>
-      <div className='px-20 container'>
+    <div className='py-10'>
+      <div className='px-20 container mx-auto'>
         <div className='flex items-center justify-between'>
-          <h2 className='text-3xl font-bold gilroy-bold'>Job Search</h2>
+          <h2 className='text-3xl font-bold'>Job Search</h2>
           <div className='flex justify-center items-center gap-5'>
             <Link to='/' className='text-md'>
               Home
