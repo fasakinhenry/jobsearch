@@ -16,7 +16,7 @@ To get started with the JobSearch app, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/jobsearch-app.git
+    git clone https://github.com/fasakinhenry/jobsearch.git
     cd jobsearch-app
     ```
 
@@ -52,4 +52,4 @@ We welcome contributions to the JobSearch app! To contribute, follow these steps
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is proprietary and confidential. Unauthorized copying, distribution, or modification of this project, via any medium, is strictly prohibited. Only authorized personnel within the Startup are permitted to use and contribute to this project.
