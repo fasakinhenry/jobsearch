@@ -1,12 +1,12 @@
 import { LightBulbIcon } from "@heroicons/react/24/outline";
 const Hero = () => {
   return (
-    <div className="py-5 h-full">
-      <div className="container px-20">
+    <div className="helvetica py-5 h-full">
+      <div className="container px-40">
         <div className="grid  place-items-start">
           <div className="grid py-6 max-w-5xl mx-auto">
             <div className="text-center grid gap-8">
-              <h2 className="text-6xl font-extrabold">
+              <h2 className="text-6xl helvetica-bold font-extrabold">
                 Job Opportunities at Your Fingertips.
               </h2>
               <p className="text-md">
