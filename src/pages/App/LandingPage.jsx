@@ -225,7 +225,7 @@ const LandingPage = () => {
           </p>
           <div className='flex items-center mx-auto bg-white rounded-full p-1.5 shadow-lg max-w-xl'>
             <div className='px-3'>
-              <LightBulbIcon className='h-6 w-6' />
+              <LightBulbIcon className='text-slate-500 h-6 w-6' />
             </div>
             <input
               type='text'
