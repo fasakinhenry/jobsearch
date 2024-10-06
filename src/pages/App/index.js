@@ -1,3 +1,3 @@
-import Landing from "./landing";
+import LandingPage from './LandingPage';
 
-export {Landing}
+export { LandingPage };
