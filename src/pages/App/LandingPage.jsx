@@ -148,17 +148,19 @@ const LandingPage = () => {
         )}
 
         <main className="relative text-center mt-8 md:mt-16">
-          <div className="absolute rounded-full overflow-hidden right-[12%] top-[40%]">
-            <img src={avatar_12} alt="" width={100} height={100} />
-          </div>
-          <div className="absolute rounded-full overflow-hidden left-[12%] top-[40%]">
-            <img src={avatar_11} alt="" width={100} height={100} />
-          </div>
-          <div className="absolute rounded-full overflow-hidden right-[1%] top-[93%]">
-            <img src={avatar_10} alt="" width={100} height={100} />
-          </div>
-          <div className="absolute rounded-full overflow-hidden left-[1%] top-[93%]">
-            <img src={avatar_5} alt="" width={100} height={100} />
+          <div className=" ">
+            <div className="absolute rounded-full shadow-md cursor-default overflow-hidden right-[12%] top-[40%]">
+              <img src={avatar_12} alt="" width={100} height={100} />
+            </div>
+            <div className="absolute rounded-full shadow-md cursor-default overflow-hidden left-[12%] top-[40%]">
+              <img src={avatar_11} alt="" width={100} height={100} />
+            </div>
+            <div className="absolute rounded-full shadow-md cursor-default overflow-hidden right-[1%] top-[93%]">
+              <img src={avatar_10} alt="" width={100} height={100} />
+            </div>
+            <div className="absolute rounded-full shadow-md cursor-default overflow-hidden left-[1%] top-[93%]">
+              <img src={avatar_5} alt="" width={100} height={100} />
+            </div>
           </div>
           <div className="bg-green-200 text-green-800 px-3 py-1 rounded-full inline-block mb-4 text-sm md:text-base">
             NEW! AI-Powered Job Matching Technology
