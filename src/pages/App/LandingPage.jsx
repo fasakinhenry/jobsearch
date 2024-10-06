@@ -165,6 +165,7 @@ const LandingPage = () => {
             />
             <button className='bg-green-500 text-white p-2 rounded-full'>
               {/* <Search size={20} /> */}
+              Search
             </button>
           </div>
         </main>
