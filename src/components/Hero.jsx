@@ -15,7 +15,7 @@ const Hero = () => {
               </p>
             </div>
             <div className='py-5'>
-              <div className='items-center flex w-4/5 mx-auto py-2 px-3 rounded-full overflow-hidden  bg-white shadow-md'>
+              <div className='items-center flex w-full mx-auto py-2 px-3 rounded-full overflow-hidden  bg-white shadow-md'>
                 <div className='px-3'>
                   <LightBulbIcon className='h-6 w-6' />
                 </div>
