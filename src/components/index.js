@@ -1,5 +1,6 @@
-import Header from "./Header";
-import Button from "./Button";
-import Hero from "./Hero";
+import Header from './Header';
+import Button from './Button';
+import Hero from './Hero';
+import Footer from './Footer';
 
-export { Header, Button, Hero }
+export { Header, Button, Hero, Footer };
