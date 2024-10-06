@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LightBulbIcon } from '@heroicons/react/24/outline';
+import { LightBulbIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 // Importing all 12 avatars from assets/avatars
 import avatar_1 from '../../assets/images/avatars/avatar1.png';
@@ -232,8 +232,9 @@ const LandingPage = () => {
               placeholder='Search jobs, companies, or keywords...'
               className='flex-grow px-3 w-full md:px-4 py-2 text-sm md:text-base focus:outline-none'
             />
-            <button className='bg-green-500 text-white p-2 px-6 rounded-full'>
-              Search
+            <button className='flex items-cetner space-x-2 bg-green-500 text-white p-2 px-6 rounded-full'>
+              <MagnifyingGlassIcon  className='w-6 h-6'/>
+             <p>Search</p>
             </button>
           </div>
         </main>
