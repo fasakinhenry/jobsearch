@@ -1,7 +1,7 @@
 import { GridBackground } from "./LandingPage";
 import { EnvelopeIcon, KeyIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { Briefcase, } from "iconsax-react";
+import { Briefcase } from "iconsax-react";
 import Google from "../../assets/images/icons/Google.svg";
 
 const Login = () => {
@@ -13,7 +13,7 @@ const Login = () => {
           <div className="flex flex-col flex-grow justify-center items-center text-center gap-3">
             {/* <img src={Google} width={200} height={200} alt="" />
              */}
-            <Briefcase  className="w-60 h-60"/>
+            <Briefcase className="w-60 h-60" />
             <h2 className="text-4xl font-bold">Job search made easy.</h2>
             <p className="text-[1.1rem]">
               Find your dream job with joblier's powerful job search feature.
@@ -47,9 +47,12 @@ const Login = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-3 ">
-              <input type="checkbox" className="cursor-pointer" />
-              <span className="ml-2 text-sm">Remember me</span>
+            <div className="mt-3 flex justify-between items-center">
+              <div>
+                <input type="checkbox" className="cursor-pointer" />
+                <span className="ml-2 text-sm">Remember me</span>
+              </div>
+              <Link to="#" className="text-sm text-green-500 font-bold">Forgot password</Link>
             </div>
             <div className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-md text-white font-bold hover:shadow-md">
               <p>Login</p>
