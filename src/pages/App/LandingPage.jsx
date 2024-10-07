@@ -31,7 +31,7 @@ const avatars = [
   avatar_12,
 ];
 
-const GridBackground = () => (
+export  const GridBackground = () => (
   <svg
     width='100%'
     height='100%'
