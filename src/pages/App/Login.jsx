@@ -9,10 +9,11 @@ const Login = () => {
       <GridBackground />
       <div className="min-h-screen w-full z-10 relative flex">
         <div className="md:flex hidden w-full p-8 bg-green-500 text-white">
-          <div className="flex flex-col flex-grow justify-center text-center gap-3">
-            <h2 className="text-5xl font-bold">Joblier</h2>
-            <p className="text-md">
-              Find your dream job with Joblier's smart search.
+          <div className="flex flex-col flex-grow justify-center items-center text-center gap-3">
+            <img src={Google} width={200} height={200} alt="" />
+            <h2 className="text-4xl font-bold">Job search made easy.</h2>
+            <p className="text-[1.1rem]">
+              Find your dream job with joblier's powerful job search feature.
             </p>
           </div>
         </div>
@@ -51,7 +52,7 @@ const Login = () => {
               <p>Login</p>
             </div>
             <div className="p-3 mt-3 flex gap-2 hover:bg-gray-300 cursor-pointer items-center justify-center bg-gray-200 rounded-md">
-                          <img src={Google} width={20} height={20} />
+              <img src={Google} width={20} height={20} />
               <p>Continue with Google</p>
             </div>
             <p className="text-center text-[0.78rem] text-slate-500 my-5">
