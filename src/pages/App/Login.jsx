@@ -21,7 +21,7 @@ const Login = () => {
           </div>
         </div>
         <div className="flex flex-col w-full md:3/5 p-8">
-          <div className="flex-grow flex flex-col justify-center max-w-md mx-auto w-full">
+          <form className="flex-grow flex flex-col justify-center max-w-md mx-auto w-full">
             <h2 className="text-4xl mb-8 font-bold text-left">Hi there 🖐🖐</h2>
             <div className="grid gap-2">
               <div className="grid gap-1">
@@ -54,9 +54,9 @@ const Login = () => {
               </div>
               <Link to="#" className="text-sm text-green-500 font-bold">Forgot password</Link>
             </div>
-            <div className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-md text-white font-bold hover:shadow-md">
+            <button type="submit" className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-md text-white font-bold hover:shadow-md">
               <p>Login</p>
-            </div>
+            </button>
             <div className="p-3 mt-3 flex gap-2 hover:bg-gray-300 cursor-pointer items-center justify-center bg-gray-200 rounded-md">
               <img src={Google} width={20} height={20} />
               <p>Continue with Google</p>
@@ -71,7 +71,7 @@ const Login = () => {
             >
               New to Joblier ?
             </Link>
-          </div>
+          </form>
         </div>
       </div>
     </div>
