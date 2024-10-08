@@ -26,7 +26,7 @@ const Login = () => {
             <div className="grid gap-2">
               <div className="grid gap-1">
                 <label className="font-bold">Email Address:</label>
-                <div className="flex text-gray-500 items-center gap-2 border-2 border-gray-200 px-4 py-3 rounded-md shadow-sm">
+                <div className="flex text-gray-500 items-center gap-2 border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm">
                   <EnvelopeIcon className="h-6 w-6" />
                   <input
                     className="w-full"
@@ -37,7 +37,7 @@ const Login = () => {
               </div>
               <div className="grid gap-1">
                 <label className="font-bold">Password:</label>
-                <div className="flex text-gray-500 items-center gap-2 border-2 border-gray-200 px-4 py-3 rounded-md shadow-sm">
+                <div className="flex text-gray-500 items-center gap-2 border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm">
                   <KeyIcon className="w-6 h-6" />
                   <input
                     className="w-full"
@@ -54,10 +54,10 @@ const Login = () => {
               </div>
               <Link to="#" className="text-sm text-green-500 font-bold">Forgot password</Link>
             </div>
-            <button type="submit" className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-md text-white font-bold hover:shadow-md">
+            <button type="submit" className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-full text-white font-bold hover:shadow-md">
               <p>Login</p>
             </button>
-            <div className="p-3 mt-3 flex gap-2 hover:bg-gray-300 cursor-pointer items-center justify-center bg-gray-200 rounded-md">
+            <div className="p-3 mt-3 flex gap-2 hover:bg-gray-300 cursor-pointer items-center justify-center bg-gray-200 rounded-full">
               <img src={Google} width={20} height={20} />
               <p>Continue with Google</p>
             </div>
