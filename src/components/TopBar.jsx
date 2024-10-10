@@ -11,7 +11,6 @@ import {
 } from "iconsax-react";
 import { GridBackground } from "../pages/App/LandingPage";
 import {
-  Bars2Icon,
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
   XMarkIcon,
