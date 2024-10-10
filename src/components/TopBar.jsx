@@ -8,6 +8,7 @@ import {
   Menu,
   SearchNormal,
   User,
+  UserSquare,
 } from "iconsax-react";
 import { GridBackground } from "../pages/App/LandingPage";
 import {
@@ -85,6 +86,10 @@ const TopBar = () => {
           <NavLink to="/messages" className={linkClass}>
             <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
             <p>Messages</p>
+          </NavLink>
+          <NavLink to="/my-jobs" className={linkClass}>
+            <UserSquare className="h-6 w-6" />
+            <p>My Jobs</p>
           </NavLink>
           <NavLink to="/profile" className={linkClass}>
             <User className="h-6 w-6" />
