@@ -1,6 +1,6 @@
 import { Button } from "../../components";
 import UserPage from "./UserPage";
-import { CurrencyDollarIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { PlusIcon } from "@heroicons/react/24/outline";
 import avatar from "../../assets/images/avatars/avatar6.png";
 import {
   Briefcase,
