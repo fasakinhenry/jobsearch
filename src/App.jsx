@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { LandingPage, Login } from "./pages/App";
+import { Home } from "./pages/User";
 import { NotFound } from "./pages";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
     createRoutesFromElements(
       <>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </>
