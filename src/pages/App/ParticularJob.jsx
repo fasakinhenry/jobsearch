@@ -35,13 +35,13 @@ const ParticularJob = () => {
           <Link to="/" className="text-3xl font-bold">
             Joblier
           </Link>
-          <div className="flex items-center gap-2">
+          <Link to="/home" className="flex items-center gap-2">
             <Button bgColor="bg-red-500 hidden md:flex">
               <Backward />
               <p>Back to Main App</p>
             </Button>
             <img src={avatar} className="h-8 w-8 rounded-full" alt="" />
-          </div>
+          </Link>
         </div>
         <div className="my-5">
           <div className="grid md:flex md:gap-5 items-start">
