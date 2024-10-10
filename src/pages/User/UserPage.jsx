@@ -1,3 +1,4 @@
+import { TopBar } from "../../components";
 const UserPage = ({ children }) => {
   return (
     <div>

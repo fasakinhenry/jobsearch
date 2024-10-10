@@ -1,6 +1,9 @@
+import UserPage from "./UserPage"
 const Home = () => {
   return (
-    <div>Home</div>
+      <UserPage>
+          
+    </UserPage>
   )
 }
 
