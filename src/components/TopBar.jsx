@@ -60,7 +60,7 @@ const TopBar = () => {
             />
           </div>
           <div className="flex items-center gap-2">
-            <div className="block md:hidden " onClick={() => setMenuOpen(true)}>
+            <div className="block md:hidden cursor-pointer hover:text-slate-700" onClick={() => setMenuOpen(true)}>
               <Bars3BottomLeftIcon className="h-6 w-6" />
             </div>
             <Button bgColor="bg-red-500 hidden md:flex">
@@ -70,7 +70,7 @@ const TopBar = () => {
             <img src={avatar} className="h-8 w-8 rounded-full" alt="" />
           </div>
         </div>
-        <div className="flex items-center gap-5 overflow-scroll">
+        <div className="top-bar flex items-center gap-5 overflow-scroll">
           <NavLink to="/home" className={linkClass}>
             <Home className="h-6 w-6" />
             <p>Home</p>

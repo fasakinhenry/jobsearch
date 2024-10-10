@@ -1,11 +1,16 @@
 import { Button } from "../../components";
 import UserPage from "./UserPage";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, ShareIcon } from "@heroicons/react/24/outline";
 import avatar from "../../assets/images/avatars/avatar6.png";
 import {
   Briefcase,
+  Facebook,
+  Instagram,
+  Link,
   Money4,
+  Share,
   Star1,
+  Xd,
 } from "iconsax-react";
 const Home = () => {
   return (
@@ -32,22 +37,27 @@ const Home = () => {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Dignissimos quidem nesciunt quod!
               </div>
-              <div className="text-slate-800 text">
+              <div className="text-slate-800">
                 <h2 className="flex items-center gap-1">
                   <Money4 className="h-6 w-6" />
                   <p className="font-bold">Salary: </p>
                 </h2>
                 <p>$120k - $150k / Year</p>
               </div>
-              <div className="text-slate-800 text">
+              <div className="text-slate-800">
                 <h2 className="flex items-center gap-1">
                   <Briefcase className="h-6 w-6 " />
                   <p className="font-bold">Type: </p>
                 </h2>
                 <p>Remote</p>
               </div>
+              <div>
+                <Button styles="bg-green-500 hover:bg-green-600">
+                  <ShareIcon className="h-6 w-6" />
+                  <p>Share</p>
+                </Button>
+              </div>
             </div>
-          
           </div>
         </div>
       </div>
