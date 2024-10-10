@@ -1,6 +1,13 @@
 import React from "react";
 import avatar from "../assets/images/avatars/avatar10.png";
-import { Buildings, Home, Logout, SearchNormal, User } from "iconsax-react";
+import {
+  Building3,
+  Buildings,
+  Home,
+  Logout,
+  SearchNormal,
+  User,
+} from "iconsax-react";
 import { GridBackground } from "../pages/App/LandingPage";
 import { NavLink } from "react-router-dom";
 import {
@@ -8,8 +15,10 @@ import {
   ChatBubbleBottomCenterTextIcon,
 } from "@heroicons/react/24/outline";
 
-const linkClass = ({isActive}) => 
-  isActive ? "flex gap-2 items-center rounded-full bg-blue-500 text-white px-3 py-2" : "flex gap-2 items-center rounded-full bg-gray-200 text-black px-3 py-2";  
+const linkClass = ({ isActive }) =>
+  isActive
+    ? "flex gap-2 items-center rounded-full bg-blue-500 text-white px-3 py-2"
+    : "flex gap-2 items-center rounded-full bg-gray-200 text-black px-3 py-2";
 const TopBar = () => {
   return (
     <div className=" py-5 w-full">
@@ -34,37 +43,22 @@ const TopBar = () => {
           </div>
         </div>
         <div className="flex items-center gap-5">
-          <NavLink to="/home"
-            className={linkClass}
-          >
-            
+          <NavLink to="/home" className={linkClass}>
             <Home className="h-6 w-6" />
             <p>Home</p>
           </NavLink>
-          <NavLink
-            to="/companies"
-            className={linkClass}
-          >
-            <Buildings className="h-6 w-6" />
+          <NavLink to="/companies" className={linkClass}>
             <p>Companies</p>
           </NavLink>
-          <NavLink
-            to="/profile"
-            className={linkClass}
-          >
+          <NavLink to="/profile" className={linkClass}>
             <User className="h-6 w-6" />
             <p>Profile</p>
           </NavLink>
-          <NavLink to="/notifications"
-            className={linkClass}
-          >
+          <NavLink to="/notifications" className={linkClass}>
             <BellIcon className="h-6 w-6" />
             <p>Notifications</p>
           </NavLink>
-          <NavLink
-            to="/messages"
-            className={linkClass}
-          >
+          <NavLink to="/messages" className={linkClass}>
             <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
             <p>Messages</p>
           </NavLink>
