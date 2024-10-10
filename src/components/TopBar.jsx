@@ -14,16 +14,37 @@ import {
   Bars2Icon,
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 const linkClass = ({ isActive }) =>
   isActive
     ? "flex gap-2 items-center rounded-full bg-green-500 text-white px-3 py-2"
     : "flex gap-2 items-center rounded-full bg-gray-200 text-black px-3 py-2";
 const TopBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className=" py-5 w-full">
+      {menuOpen && (
+        <div className="top-0 h-[100vh] w-[100vw] z-30 bg-green-500  fixed">
+          <div className="min-h-screen flex flex-col flex-grow justify-center items-center text-center gap-3 ">
+            <div
+              onClick={() => setMenuOpen(false)}
+              className="absolute right-10 top-10 text-white cursor-pointer hover:text-black"
+            >
+              <XMarkIcon className="h-6 w-6" />
+            </div>
+            <p className="text-xl hover:text-black cursor-pointer text-white">
+              Logout
+            </p>
+            <p className="text-xl hover:text-black cursor-pointer text-white">
+              Search
+            </p>
+          </div>
+        </div>
+      )}
       <GridBackground />
       <div className="container z-20 px-6 md:px-20 relative grid gap-4">
         <div className="flex items-center justify-between md:justify-normal gap-20">
@@ -39,7 +60,7 @@ const TopBar = () => {
             />
           </div>
           <div className="flex items-center gap-2">
-            <div className="block md:hidden">
+            <div className="block md:hidden " onClick={() => setMenuOpen(true)}>
               <Bars3BottomLeftIcon className="h-6 w-6" />
             </div>
             <Button bgColor="bg-red-500 hidden md:flex">

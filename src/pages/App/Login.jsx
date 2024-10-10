@@ -52,9 +52,14 @@ const Login = () => {
                 <input type="checkbox" className="cursor-pointer" />
                 <span className="ml-2 text-sm">Remember me</span>
               </div>
-              <Link to="#" className="text-sm text-green-500 font-bold">Forgot password</Link>
+              <Link to="#" className="text-sm text-green-500 font-bold">
+                Forgot password
+              </Link>
             </div>
-            <button type="submit" className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-full text-white font-bold hover:shadow-md">
+            <button
+              type="submit"
+              className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-full text-white font-bold hover:shadow-md"
+            >
               <p>Login</p>
             </button>
             <div className="p-3 mt-3 flex gap-2 hover:bg-gray-300 cursor-pointer items-center justify-center bg-gray-200 rounded-full">
