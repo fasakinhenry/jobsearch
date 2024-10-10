@@ -7,7 +7,8 @@ import { Briefcase, Money4, Star1 } from "iconsax-react";
 const jobs = [
   {
     id: 1,
-    title: "Appwrite Frontend Developer",
+    company: "Appwrite",
+    title: " Frontend Developer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$120k - $150k / Year",
@@ -16,7 +17,8 @@ const jobs = [
   },
   {
     id: 2,
-    title: "MongoDB Senior Developer",
+    company: "MongoDB",
+    title: "Senior Developer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$220 - $350 / Month",
@@ -25,7 +27,8 @@ const jobs = [
   },
   {
     id: 3,
-    title: "Web Designer",
+    company: "Piggivest",
+    title: "Product Designer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$420k - $550k / Year",
@@ -34,6 +37,7 @@ const jobs = [
   },
   {
     id: 4,
+    company: "Ziggi",
     title: "Content creator",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
@@ -43,7 +47,8 @@ const jobs = [
   },
   {
     id: 5,
-    title: "Tublian UI/UX designer",
+    company: "Tublian",
+    title: "UIUX designer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$50k - $100k / month",
@@ -52,7 +57,8 @@ const jobs = [
   },
   {
     id: 6,
-    title: "Canva Product Designer",
+    company: "Canva",
+    title: "Product Designer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$320 - $550k / month",
@@ -61,7 +67,8 @@ const jobs = [
   },
   {
     id: 7,
-    title: "Begg Backend Engineer",
+    company: "Begg",
+    title: "Backend Engineer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$100M - $150M / Year",
@@ -70,7 +77,8 @@ const jobs = [
   },
   {
     id: 8,
-    title: "Clipsave marketer",
+    company: "Clipsave",
+    title: "marketer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$320k - $450 / week",
@@ -79,7 +87,8 @@ const jobs = [
   },
   {
     id: 9,
-    title: "Pipance Graphic designer",
+    company: "Pipance",
+    title: " Graphic designer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$1000 - $2100",
@@ -101,12 +110,16 @@ const Home = () => {
         <div className="grid mt-5">
           <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-5 gap-5 px-1 py-1">
             {jobs.map((job) => (
-              <div key={job.id} className="grid hover:scale-105 transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden">
+              <div
+                key={job.id}
+                className="grid hover:scale-105 transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden"
+              >
                 <div className="flex gap-3 items-center">
                   <img src={avatar} className="h-8 w-8 rounded-full" />
-                  <h2 className="text-[1rem] w-full">
-                   {job.title}
-                  </h2>
+                  <div className="grid gap-1 w-full">
+                    <h2 className="text-[1rem]">{job.title}</h2>
+                    <p className="text-sm font-bold">{job.company}</p>
+                  </div>
                   <Star1 className="h-6 w-6 cursor-pointer" />
                 </div>
                 <div className="text-slate-800 text-[0.9rem]">
