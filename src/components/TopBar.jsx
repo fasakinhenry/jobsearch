@@ -50,10 +50,6 @@ const TopBar = () => {
             <Building3 className="h-6 w-6" />
             <p>Companies</p>
           </NavLink>
-          <NavLink to="/profile" className={linkClass}>
-            <User className="h-6 w-6" />
-            <p>Profile</p>
-          </NavLink>
           <NavLink to="/notifications" className={linkClass}>
             <BellIcon className="h-6 w-6" />
             <p>Notifications</p>
@@ -61,6 +57,10 @@ const TopBar = () => {
           <NavLink to="/messages" className={linkClass}>
             <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
             <p>Messages</p>
+          </NavLink>
+          <NavLink to="/profile" className={linkClass}>
+            <User className="h-6 w-6" />
+            <p>Profile</p>
           </NavLink>
         </div>
       </div>
