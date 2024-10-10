@@ -4,7 +4,7 @@ const UserPage = ({ children }) => {
     <div>
       <TopBar />
       <div className="relative">
-        <div className="conatainer px-20 py-2">
+        <div className="conatainer px-6 md:px-20 py-2">
         {children}
         </div>
       </div>

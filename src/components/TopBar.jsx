@@ -5,14 +5,17 @@ import {
   Building3,
   Home,
   Logout,
+  Menu,
   SearchNormal,
   User,
 } from "iconsax-react";
 import { GridBackground } from "../pages/App/LandingPage";
 import {
+  Bars2Icon,
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
 } from "@heroicons/react/24/outline";
+import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
 
 const linkClass = ({ isActive }) =>
   isActive
@@ -24,7 +27,9 @@ const TopBar = () => {
       <GridBackground />
       <div className="container z-20 px-6 md:px-20 relative grid gap-4">
         <div className="flex items-center justify-between md:justify-normal gap-20">
-          <Link to="/" className="text-3xl font-bold">Joblier</Link>
+          <Link to="/" className="text-3xl font-bold">
+            Joblier
+          </Link>
           <div className="hidden md:flex bg-white border-2 px-4 w-2/4 mx-auto py-3 rounded-full items-center gap-3">
             <SearchNormal className="text-slate-500 h-6 w-6" />
             <input
@@ -34,7 +39,10 @@ const TopBar = () => {
             />
           </div>
           <div className="flex items-center gap-2">
-            <Button bgColor="bg-red-500">
+            <div className="block md:hidden">
+              <Bars3BottomLeftIcon className="h-6 w-6" />
+            </div>
+            <Button bgColor="bg-red-500 hidden md:flex">
               <Logout />
               <p>Logout</p>
             </Button>
