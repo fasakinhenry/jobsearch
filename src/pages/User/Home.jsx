@@ -5,7 +5,6 @@ import avatar from "../../assets/images/avatars/avatar6.png";
 import {
   Briefcase,
   Money4,
-  Star,
   Star1,
 } from "iconsax-react";
 const Home = () => {
