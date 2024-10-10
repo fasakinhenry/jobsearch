@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import { LandingPage, Login } from "./pages/App";
+import { LandingPage, Login, ParticularJob } from "./pages/App";
 import { Home, Notifications, MyJobs, CreateJob, Profile, Companies, Messages } from "./pages/User";
 import { NotFound } from "./pages";
 
@@ -21,6 +21,7 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/my-jobs" element={<MyJobs />} />
         <Route path="/my-jobs/create" element={<CreateJob />} />
+        <Route path="/jobs/:id" element={<ParticularJob />} />
         <Route path="/messages" element={<Messages />} />
       </>
     )

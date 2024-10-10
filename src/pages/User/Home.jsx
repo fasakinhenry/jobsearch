@@ -3,6 +3,7 @@ import UserPage from "./UserPage";
 import { PlusIcon, ShareIcon } from "@heroicons/react/24/outline";
 import avatar from "../../assets/images/avatars/avatar6.png";
 import { Briefcase, Money4, Star1 } from "iconsax-react";
+import { Link } from "react-router-dom";
 
 const jobs = [
   {
@@ -102,10 +103,12 @@ const Home = () => {
       <div className="grid">
         <div className="sticky top-0 bg-opacity-90 bg-white py-5 flex items-center justify-between">
           <h2 className="text-3xl">What Job would you like to see today ?</h2>
-          <Button>
-            <PlusIcon className="h-6 w-6" />
-            <p>Create Job</p>
-          </Button>
+          <Link to="/my-jobs/create">
+            <Button>
+              <PlusIcon className="h-6 w-6" />
+              <p>Create Job</p>
+            </Button>
+          </Link>
         </div>
         <div className="grid mt-5">
           <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-5 gap-5 px-1 py-1">
@@ -118,7 +121,9 @@ const Home = () => {
                   <img src={avatar} className="h-8 w-8 rounded-full" />
                   <div className="grid gap-1 w-full">
                     <h2 className="text-[1rem] capitalize">{job.title}</h2>
-                    <p className="text-sm font-bold capitalize">{job.company}</p>
+                    <p className="text-sm font-bold capitalize">
+                      {job.company}
+                    </p>
                   </div>
                   <Star1 className="h-6 w-6 cursor-pointer" />
                 </div>
