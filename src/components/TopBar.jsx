@@ -1,16 +1,14 @@
-import React from "react";
 import avatar from "../assets/images/avatars/avatar10.png";
+import { NavLink } from "react-router-dom";
+import Button from "./Button";
 import {
-  Building,
   Building3,
-  Buildings,
   Home,
   Logout,
   SearchNormal,
   User,
 } from "iconsax-react";
 import { GridBackground } from "../pages/App/LandingPage";
-import { NavLink } from "react-router-dom";
 import {
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
@@ -36,10 +34,10 @@ const TopBar = () => {
             />
           </div>
           <div className="flex items-center gap-2">
-            <button className="text-white flex items-center gap-2 bg-red-500 rounded-full px-3 py-2">
+            <Button>
               <Logout />
               <p>Logout</p>
-            </button>
+            </Button>
             <img src={avatar} className="h-8 w-8 rounded-full" alt="" />
           </div>
         </div>
