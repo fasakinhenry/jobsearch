@@ -128,9 +128,9 @@ const Home = () => {
         <div className="grid mt-5">
           <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-5 gap-5 px-1 py-1">
             {jobs.map((job) => (
-              <div
+              <Link to={`/jobs/${job.id}`}
                 key={job.id}
-                className="grid hover:scale-105 transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden"
+                className="grid scale transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden"
               >
                 <div className="flex gap-3 items-center">
                   <img src={avatar} className="h-8 w-8 rounded-full" />
@@ -166,7 +166,7 @@ const Home = () => {
                   </Button>
                   <p className="text-right">{job.date}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

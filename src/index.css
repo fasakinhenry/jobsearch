@@ -67,3 +67,7 @@ input {
   width: 0;
   height: 0;
 }
+
+.scale:hover {
+  transform: scale(1.04);
+}
