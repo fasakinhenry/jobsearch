@@ -1,6 +1,9 @@
+import UserPage from "./UserPage"
 const Notifications = () => {
   return (
-    <div>Notifications</div>
+      <UserPage>
+          
+    </UserPage>
   )
 }
 

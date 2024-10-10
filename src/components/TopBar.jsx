@@ -8,10 +8,9 @@ import {
   ChatBubbleBottomCenterTextIcon,
 } from "@heroicons/react/24/outline";
 
+const linkClass = ({isActive}) => 
+  isActive ? "flex gap-2 items-center rounded-full bg-blue-500 text-white px-3 py-2" : "flex gap-2 items-center rounded-full bg-gray-200 text-black px-3 py-2";  
 const TopBar = () => {
-  const active = (isActive) => {
-    isActive ? "flex gap-2 items-center rounded-full bg-green-500 text-white px-3 py-2" : "flex gap-2 items-center rounded-full bg-gray-500 text-black px-3 py-2";
-  };
   return (
     <div className=" py-5 w-full">
       <GridBackground />
@@ -36,32 +35,35 @@ const TopBar = () => {
         </div>
         <div className="flex items-center gap-5">
           <NavLink to="/home"
-            className={active}
+            className={linkClass}
           >
             
             <Home className="h-6 w-6" />
             <p>Home</p>
           </NavLink>
           <NavLink
-            className={() =>active}
+            to="/companies"
+            className={linkClass}
           >
             <Buildings className="h-6 w-6" />
             <p>Companies</p>
           </NavLink>
           <NavLink
-            className={active}
+            to="/profile"
+            className={linkClass}
           >
             <User className="h-6 w-6" />
             <p>Profile</p>
           </NavLink>
           <NavLink to="/notifications"
-            className={active}
+            className={linkClass}
           >
             <BellIcon className="h-6 w-6" />
             <p>Notifications</p>
           </NavLink>
           <NavLink
-            className={active}
+            to="/messages"
+            className={linkClass}
           >
             <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
             <p>Messages</p>
