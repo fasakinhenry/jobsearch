@@ -48,7 +48,7 @@ const jobs = [
   {
     id: 5,
     company: "Tublian",
-    title: "UIUX designer",
+    title: "UI/UX designer",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$50k - $100k / month",
@@ -117,8 +117,8 @@ const Home = () => {
                 <div className="flex gap-3 items-center">
                   <img src={avatar} className="h-8 w-8 rounded-full" />
                   <div className="grid gap-1 w-full">
-                    <h2 className="text-[1rem]">{job.title}</h2>
-                    <p className="text-sm font-bold">{job.company}</p>
+                    <h2 className="text-[1rem] capitalize">{job.title}</h2>
+                    <p className="text-sm font-bold capitalize">{job.company}</p>
                   </div>
                   <Star1 className="h-6 w-6 cursor-pointer" />
                 </div>
