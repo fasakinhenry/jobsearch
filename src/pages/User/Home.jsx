@@ -4,12 +4,7 @@ import { CurrencyDollarIcon, PlusIcon } from "@heroicons/react/24/outline";
 import avatar from "../../assets/images/avatars/avatar6.png";
 import {
   Briefcase,
-  Coin,
-  Money,
-  Money2,
   Money4,
-  NoteSquare,
-  NotificationFavorite,
   Star,
   Star1,
 } from "iconsax-react";
