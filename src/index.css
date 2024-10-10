@@ -62,7 +62,7 @@ input {
 }
 
 
-::-webkit-scrollbar {
+.top-bar::-webkit-scrollbar {
   background-color: none;
   width: 0;
   height: 0;
