@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import { LandingPage } from "./pages/App";
+import { LandingPage, Login } from "./pages/App";
 import { NotFound } from "./pages";
 
 export default function App() {
@@ -12,6 +12,7 @@ export default function App() {
     createRoutesFromElements(
       <>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </>
     )

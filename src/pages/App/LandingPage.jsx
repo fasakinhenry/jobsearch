@@ -14,6 +14,7 @@ import avatar_9 from '../../assets/images/avatars/avatar9.png';
 import avatar_10 from '../../assets/images/avatars/avatar10.png';
 import avatar_11 from '../../assets/images/avatars/avatar11.png';
 import avatar_12 from '../../assets/images/avatars/avatar12.png';
+import { Link } from 'react-router-dom';
 
 // Storing all avatars in an array for easy access
 const avatars = [
@@ -31,7 +32,7 @@ const avatars = [
   avatar_12,
 ];
 
-const GridBackground = () => (
+export  const GridBackground = () => (
   <svg
     width='100%'
     height='100%'
@@ -139,9 +140,12 @@ const LandingPage = () => {
             </a>
           </nav>
           <div className='flex items-center space-x-4'>
-            <button className='bg-green-500 text-white px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'>
+            <Link to="/login" className='border-green-500 border-2 px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'>
+              Login
+            </Link>
+            <Link to="/signup" className='bg-green-500 text-white px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'>
               Sign up
-            </button>
+            </Link>
             <button
               className='md:hidden'
               onClick={() => setIsMenuOpen(!isMenuOpen)}
