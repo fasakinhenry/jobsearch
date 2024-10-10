@@ -60,3 +60,10 @@ input {
   background: transparent;
   outline: none;
 }
+
+
+::-webkit-scrollbar {
+  background-color: none;
+  width: 0;
+  height: 0;
+}
