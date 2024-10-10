@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { LandingPage, Login } from "./pages/App";
-import { Home, Notifications, MyJobs, Profile, Companies, Messages } from "./pages/User";
+import { Home, Notifications, MyJobs, CreateJob, Profile, Companies, Messages } from "./pages/User";
 import { NotFound } from "./pages";
 
 export default function App() {
@@ -20,6 +20,7 @@ export default function App() {
         <Route path="/companies" element={<Companies />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/my-jobs" element={<MyJobs />} />
+        <Route path="/my-jobs/create" element={<CreateJob />} />
         <Route path="/messages" element={<Messages />} />
       </>
     )

@@ -4,4 +4,5 @@ import Messages from './Messages'
 import Profile from './Profile'
 import Companies from './Companies'
 import MyJobs from './MyJobs'
-export { Home, Notifications, Messages, MyJobs, Companies, Profile }
+import CreateJob from './CreateJob'
+export { Home, Notifications, Messages, CreateJob,MyJobs, Companies, Profile }
