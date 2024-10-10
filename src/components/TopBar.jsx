@@ -1,5 +1,5 @@
 import avatar from "../assets/images/avatars/avatar10.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 import {
   Building3,
@@ -16,7 +16,7 @@ import {
 
 const linkClass = ({ isActive }) =>
   isActive
-    ? "flex gap-2 items-center rounded-full bg-blue-500 text-white px-3 py-2"
+    ? "flex gap-2 items-center rounded-full bg-green-500 text-white px-3 py-2"
     : "flex gap-2 items-center rounded-full bg-gray-200 text-black px-3 py-2";
 const TopBar = () => {
   return (
@@ -24,7 +24,7 @@ const TopBar = () => {
       <GridBackground />
       <div className="container z-20 px-20 relative grid gap-4">
         <div className="flex items-center gap-20">
-          <h2 className="text-3xl font-bold">Joblier</h2>
+          <Link to="/" className="text-3xl font-bold">Joblier</Link>
           <div className="bg-white border-2 px-4 w-2/4 mx-auto py-3 rounded-full flex items-center gap-3">
             <SearchNormal className="text-slate-500 h-6 w-6" />
             <input
@@ -34,7 +34,7 @@ const TopBar = () => {
             />
           </div>
           <div className="flex items-center gap-2">
-            <Button>
+            <Button bgColor="bg-red-500">
               <Logout />
               <p>Logout</p>
             </Button>

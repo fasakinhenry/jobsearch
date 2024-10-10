@@ -1,6 +1,6 @@
-const Button = ({children}) => {
+const Button = ({children, bgColor}) => {
   return (
-    <button className="text-white flex items-center gap-2 bg-red-500 rounded-full px-3 py-2">
+    <button className={`${bgColor ?? 'bg-green-500'} text-white flex items-center gap-2 rounded-full px-3 py-2`}>
       {children}
     </button>
   );
