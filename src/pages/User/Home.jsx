@@ -5,7 +5,7 @@ import avatar from "../../assets/images/avatars/avatar6.png";
 import { Briefcase, Money4, Star1 } from "iconsax-react";
 import { Link } from "react-router-dom";
 
-const jobs = [
+export const jobs = [
   {
     id: 1,
     company: "Appwrite",
@@ -15,6 +15,7 @@ const jobs = [
     salary: "$120k - $150k / Year",
     type: "Remote",
     date: "2 days ago",
+    location: 'Nigeria'
   },
   {
     id: 2,
@@ -25,6 +26,8 @@ const jobs = [
     salary: "$220 - $350 / Month",
     type: "Full-time",
     date: "2 weeks ago",
+    location: 'America'
+
   },
   {
     id: 3,
@@ -35,6 +38,8 @@ const jobs = [
     salary: "$420k - $550k / Year",
     type: "Part-time",
     date: "4 days ago",
+    location: 'Arab'
+
   },
   {
     id: 4,
@@ -45,6 +50,8 @@ const jobs = [
     salary: "$120 - $150 / month",
     type: "Full-time",
     date: "1 month ago",
+    location: 'Israel'
+
   },
   {
     id: 5,
@@ -55,6 +62,8 @@ const jobs = [
     salary: "$50k - $100k / month",
     type: "Full-time",
     date: "25 days ago",
+    location: 'United Kingdom'
+
   },
   {
     id: 6,
@@ -65,6 +74,8 @@ const jobs = [
     salary: "$320 - $550k / month",
     type: "Part-time",
     date: "16 weeks ago",
+    location: 'Brazil'
+
   },
   {
     id: 7,
@@ -75,6 +86,8 @@ const jobs = [
     salary: "$100M - $150M / Year",
     type: "Full-time",
     date: "40 days ago",
+    location: 'Canada'
+
   },
   {
     id: 8,
@@ -85,6 +98,7 @@ const jobs = [
     salary: "$320k - $450 / week",
     type: "Remote",
     date: "7 days ago",
+    location: 'New York'
   },
   {
     id: 9,
@@ -95,6 +109,7 @@ const jobs = [
     salary: "$1000 - $2100",
     type: "Full-time",
     date: "1 day ago",
+    location: 'Russia'
   },
 ];
 const Home = () => {
