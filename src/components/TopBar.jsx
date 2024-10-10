@@ -1,6 +1,7 @@
 import React from "react";
 import avatar from "../assets/images/avatars/avatar10.png";
 import {
+  Building,
   Building3,
   Buildings,
   Home,
@@ -48,6 +49,7 @@ const TopBar = () => {
             <p>Home</p>
           </NavLink>
           <NavLink to="/companies" className={linkClass}>
+            <Building3 className="h-6 w-6" />
             <p>Companies</p>
           </NavLink>
           <NavLink to="/profile" className={linkClass}>
