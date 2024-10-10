@@ -66,7 +66,7 @@ const jobs = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos quidem nesciunt quod!",
     salary: "$100M - $150M / Year",
     type: "Full-time",
-    date: "40d days ago",
+    date: "40 days ago",
   },
   {
     id: 8,
@@ -101,7 +101,7 @@ const Home = () => {
         <div className="grid mt-5">
           <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-5 gap-5 px-1 py-1">
             {jobs.map((job) => (
-              <div key={job.id} className="grid hover:scale-105 hover:transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden">
+              <div key={job.id} className="grid hover:scale-105 transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden">
                 <div className="flex gap-3 items-center">
                   <img src={avatar} className="h-8 w-8 rounded-full" />
                   <h2 className="text-[1rem] w-full">
