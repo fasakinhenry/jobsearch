@@ -33,25 +33,25 @@ const Home = () => {
                 </h2>
                 <Star1 className="h-6 w-6 cursor-pointer" />
               </div>
-              <div className="text-slate-800 text">
+              <div className="text-slate-800 text-[0.9rem]">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Dignissimos quidem nesciunt quod!
               </div>
-              <div className="text-slate-800">
+              <div className="text-slate-800 text-[0.9rem]">
                 <h2 className="flex items-center gap-1">
                   <Money4 className="h-6 w-6" />
                   <p className="font-bold">Salary: </p>
                 </h2>
                 <p>$120k - $150k / Year</p>
               </div>
-              <div className="text-slate-800">
+              <div className="text-slate-800 text-[0.9rem]">
                 <h2 className="flex items-center gap-1">
                   <Briefcase className="h-6 w-6 " />
                   <p className="font-bold">Type: </p>
                 </h2>
                 <p>Remote</p>
               </div>
-              <div>
+              <div className="text-[0.9rem]">
                 <Button styles="bg-green-500 hover:bg-green-600">
                   <ShareIcon className="h-6 w-6" />
                   <p>Share</p>
