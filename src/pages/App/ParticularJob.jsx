@@ -43,14 +43,14 @@ const ParticularJob = () => {
             <img src={avatar} className="h-8 w-8 rounded-full" alt="" />
           </Link>
         </div>
-        <div className="my-5">
+        <div className="my-10">
           <div className="grid md:flex md:gap-5 items-start">
-            <div className="grid md:w-3/6">
-              <div className="flex items-center gap-1 bg-gray-100 rounded-xl p-4 my-5 shadow-md">
+            <div className="grid md:w-3/6 gap-5">
+              <div className="flex items-center gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <PasswordCheck />
                 <h2 className="text-3xl">{currentJob && currentJob[0].title}</h2>
               </div>
-              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 my-5 shadow-md">
+              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex items-center gap-1">
                   <Note className="h-6 w-6" />
                   <h2 className="font-bold">Description:</h2>
@@ -59,21 +59,21 @@ const ParticularJob = () => {
                 {currentJob && currentJob[0].description}
                 </p>
               </div>
-              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 my-5 shadow-md">
+              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex gap-1 items-end">
                   <MoneyChange className="h-6 w-6" />
                   <h2 className="font-bold">Salary:</h2>
                 </div>
                 <p className="text-md">{currentJob && currentJob[0].salary}</p>
               </div>
-              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 my-5 shadow-md">
+              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex gap-1 items-end">
                   <MapPinIcon className="h-6 w-6" />
                   <h2 className="font-bold">Location:</h2>
                 </div>
                 <p className="text-md">{currentJob && currentJob[0].location}</p>
               </div>
-              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 my-5 shadow-md">
+              <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex gap-1 items-end">
                   <Briefcase className="h-6 w-6" />
                   <h2 className="font-bold">Job Type:</h2>
@@ -81,8 +81,8 @@ const ParticularJob = () => {
                 <p className="text-md">{currentJob && currentJob[0].type}</p>
               </div>
             </div>
-            <div className="grid md:w-4/6">
-              <div className="grid  bg-gray-100 rounded-xl p-4 my-5 shadow-md">
+            <div className="grid md:w-4/6 my-5 md:my-0 gap-5">
+              <div className="grid bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex items-center gap-1 mb-5">
                   <Building3 className="h-8 w-8" />
                   <div className="grid ">
