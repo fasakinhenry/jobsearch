@@ -4,6 +4,7 @@ import { PlusIcon, ShareIcon } from "@heroicons/react/24/outline";
 import avatar from "../../assets/images/avatars/avatar6.png";
 import { Briefcase, Money4, Star1 } from "iconsax-react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export const jobs = [
   {
@@ -113,6 +114,23 @@ export const jobs = [
   },
 ];
 const Home = () => {
+  const [jobsList, setJobsList] = useState([])
+  const [filteredJobsList, setFilteredJobsList] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+  
+
+  const handleJobSearch = () => {
+
+  }
+
+  useEffect(() => {
+    setJobsList(jobs)
+    setFilteredJobsList(jobs)
+  }, [])
+  
+  useEffect(() => {
+    handleJobSearch()
+  },[searchTerm])
   return (
     <UserPage>
       <div className="grid">
@@ -127,7 +145,7 @@ const Home = () => {
         </div>
         <div className="grid mt-5">
           <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-5 gap-5 px-1 py-1">
-            {jobs.map((job) => (
+            {filteredJobsList.map((job) => (
               <Link to={`/jobs/${job.id}`}
                 key={job.id}
                 className="grid scale border border-gray-100 hover:border-green-500  transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden"
