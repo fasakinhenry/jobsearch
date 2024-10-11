@@ -1,10 +1,10 @@
-import UserPage from "./UserPage"
+import UserPage from "./UserPage";
 const Notifications = () => {
   return (
-      <UserPage>
-          
+    <UserPage>
+      <h2 className="text-2xl">My Notifications</h2>
     </UserPage>
-  )
-}
+  );
+};
 
-export default Notifications
+export default Notifications;

@@ -1,10 +1,10 @@
-import UserPage from "./UserPage"
+import UserPage from "./UserPage";
 const Profile = () => {
   return (
-      <UserPage>
-          
+    <UserPage>
+      <h2 className="text-2xl">My Profile</h2>
     </UserPage>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

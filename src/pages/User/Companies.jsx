@@ -1,10 +1,10 @@
-import UserPage from "./UserPage"
+import UserPage from "./UserPage";
 const Companies = () => {
   return (
-      <UserPage>
-          
+    <UserPage>
+      <h2 className="text-2xl">Companies</h2>
     </UserPage>
-  )
-}
+  );
+};
 
-export default Companies
+export default Companies;

@@ -1,10 +1,10 @@
-import UserPage from "./UserPage"
+import UserPage from "./UserPage";
 const Messages = () => {
   return (
-      <UserPage>
-          
+    <UserPage>
+      <h2 className="text-2xl">My messages</h2>
     </UserPage>
-  )
-}
+  );
+};
 
-export default Messages
+export default Messages;
