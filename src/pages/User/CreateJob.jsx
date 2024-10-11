@@ -20,7 +20,7 @@ const CreateJob = () => {
           </div>
         </div>
         <div className="my-10">
-          <h2 className="text-lg font-bold">Create Jobs</h2>
+          <h2 className=" text-center text-3xl font-bold">Create Jobs</h2>
         </div>
       </div>
     </div>
