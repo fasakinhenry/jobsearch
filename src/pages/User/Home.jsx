@@ -130,7 +130,7 @@ const Home = () => {
             {jobs.map((job) => (
               <Link to={`/jobs/${job.id}`}
                 key={job.id}
-                className="grid scale transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden"
+                className="grid scale border border-gray-100 hover:border-green-500  transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden"
               >
                 <div className="flex gap-3 items-center">
                   <img src={avatar} className="h-8 w-8 rounded-full" />
