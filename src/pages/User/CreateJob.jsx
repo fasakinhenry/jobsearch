@@ -3,8 +3,23 @@ import { Backward } from "iconsax-react";
 import avatar from "../../assets/images/avatars/avatar4.png";
 import { Button } from "../../components";
 import { GridBackground } from "../App/LandingPage";
+import { useEffect, useState } from "react";
 
 const CreateJob = () => {
+  const [countries, setCountries] = useState([]);
+  const fetchAllCountries = async () => {
+    const res = await fetch("https://restcountries.com/v3.1/all")
+    const data = await res.json()
+    const countryNames = data
+      .map(country => country.name.common)
+      .sort((a,b) => a.localeCompare(b))
+
+    setCountries(countryNames)
+  };
+
+  useEffect(() => {
+    fetchAllCountries();
+  }, []);
   return (
     <div className="py-5">
       <GridBackground />
@@ -51,9 +66,11 @@ const CreateJob = () => {
                 type="text"
                 className="px-4 py-3 border-2 border-gray-600 rounded-full shadow-sm"
               >
-                <option className="flex gap-2 items-center">Nigeria</option>
-                <option className="flex gap-2 items-center">China</option>
-                <option className="flex gap-2 items-center">Brazil</option>
+                {countries.length != 0 && countries.map((country) => (
+                  <option className="flex gap-2 capitalize items-center" value={country}>
+                    {country}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="grid gap-1 my-3">
