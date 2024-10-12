@@ -4,8 +4,6 @@ import {
   Backward,
   Briefcase,
   Building3,
-  Map,
-  Map1,
   MoneyChange,
   Note,
   PasswordCheck,
