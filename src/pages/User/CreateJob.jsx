@@ -40,9 +40,10 @@ const CreateJob = () => {
           <h2 className=" text-center text-3xl font-bold">
             What Job would you love to create ? 😎
           </h2>
+          <div className="grid md:block place-items-center ">
           <form
             action=""
-            className="my-6 grid md:mx-auto md:max-w-2xl 2xl:max-w-4xl rounded-xl p-5"
+            className="my-6 grid w-full md:mx-auto md:max-w-2xl 2xl:maw-w-4xl rounded-xl p-5"
           >
             <div className="grid gap-1 my-3">
               <label className="text-[1.2rem] font-bold">Job Title</label>
@@ -113,6 +114,7 @@ const CreateJob = () => {
               </select>
             </div>
           </form>
+          </div>
         </div>
       </div>
     </div>
