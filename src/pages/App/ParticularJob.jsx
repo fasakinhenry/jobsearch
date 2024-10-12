@@ -11,7 +11,7 @@ import {
   PasswordCheck,
 } from "iconsax-react";
 import avatar from "../../assets/images/avatars/avatar6.png";
-import { jobs } from "../User/Home";
+import { jobs } from "../User/jobs";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
