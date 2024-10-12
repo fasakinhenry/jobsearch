@@ -4,24 +4,25 @@ import {
   Backward,
   Briefcase,
   Building3,
-  Map,
-  Map1,
+  Link2,
+  Link21,
   MoneyChange,
   Note,
   PasswordCheck,
 } from "iconsax-react";
 import avatar from "../../assets/images/avatars/avatar6.png";
-import { jobs } from "../User/Home";
+import { jobs } from "../User/jobs";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { GlobeEuropeAfricaIcon } from "@heroicons/react/24/outline";
 
 const ParticularJob = () => {
   const [currentJob, setCurrentJob] = useState();
   const { id } = useParams();
   const fetchAccurateJob = () => {
-      const exactJob = jobs.filter((job) => job.id == id);
-      console.log(exactJob)
+    const exactJob = jobs.filter((job) => job.id == id);
+    console.log(exactJob);
     setCurrentJob(exactJob);
   };
 
@@ -48,7 +49,9 @@ const ParticularJob = () => {
             <div className="grid md:w-3/6 gap-5">
               <div className="flex items-center gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <PasswordCheck />
-                <h2 className="text-3xl">{currentJob && currentJob[0].title}</h2>
+                <h2 className="text-3xl">
+                  {currentJob && currentJob[0].title}
+                </h2>
               </div>
               <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex items-center gap-1">
@@ -56,7 +59,7 @@ const ParticularJob = () => {
                   <h2 className="font-bold">Description:</h2>
                 </div>
                 <p className="text-md">
-                {currentJob && currentJob[0].description}
+                  {currentJob && currentJob[0].description}
                 </p>
               </div>
               <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
@@ -71,7 +74,9 @@ const ParticularJob = () => {
                   <MapPinIcon className="h-6 w-6" />
                   <h2 className="font-bold">Location:</h2>
                 </div>
-                <p className="text-md">{currentJob && currentJob[0].location}</p>
+                <p className="text-md">
+                  {currentJob && currentJob[0].location}
+                </p>
               </div>
               <div className="grid gap-1 bg-gray-100 rounded-xl p-4 shadow-md">
                 <div className="flex gap-1 items-end">
@@ -87,7 +92,9 @@ const ParticularJob = () => {
                   <Building3 className="h-8 w-8" />
                   <div className="grid ">
                     <h2 className="font-bold text-lg">Company Info:</h2>
-                    <p className="text-sm ">{currentJob && currentJob[0].company}</p>
+                    <p className="text-sm ">
+                      {currentJob && currentJob[0].company}
+                    </p>
                   </div>
                 </div>
 
@@ -100,6 +107,31 @@ const ParticularJob = () => {
                   excepturi pariatur maxime facilis voluptas deserunt,
                   molestiae, placeat quam id officiis!
                 </p>
+              </div>
+              <div className="grid bg-gray-100 rounded-xl p-4 shadow-md">
+                <div className="flex items-center gap-1 mb-5">
+                  <GlobeEuropeAfricaIcon className="h-8 w-8"/>
+                  <div className="grid ">
+                    <h2 className="font-bold text-lg">Company Website:</h2>
+                  </div>
+                </div>
+
+                <Link to={currentJob && currentJob[0].website} target="_blank" className="font-bold hover:text-green-700 flex items-center gap-1">
+                  <p>Visit Site</p>
+                  <Link21 />
+                </Link>
+              </div>
+              <div className="grid bg-gray-100 rounded-xl p-4 shadow-md">
+                <div className="flex items-center gap-1 mb-5">
+                  <EnvelopeIcon className="h-6 w-6"/>
+                  <div className="grid ">
+                    <h2 className="font-bold text-lg">Contact Email:</h2>
+                  </div>
+                </div>
+
+                <Link to={currentJob && currentJob[0].website} target="_blank" className="font-bold hover:text-green-700 flex items-center gap-1">
+                 {currentJob && currentJob[0].email}
+                </Link>
               </div>
             </div>
           </div>
