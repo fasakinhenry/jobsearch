@@ -14,7 +14,7 @@ import avatar from "../../assets/images/avatars/avatar6.png";
 import { jobs } from "../User/jobs";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import { GlobeEuropeAfricaIcon } from "@heroicons/react/24/outline";
 
 const ParticularJob = () => {
@@ -119,6 +119,18 @@ const ParticularJob = () => {
                 <Link to={currentJob && currentJob[0].website} target="_blank" className="font-bold hover:text-green-700 flex items-center gap-1">
                   <p>Visit Site</p>
                   <Link21 />
+                </Link>
+              </div>
+              <div className="grid bg-gray-100 rounded-xl p-4 shadow-md">
+                <div className="flex items-center gap-1 mb-5">
+                  <EnvelopeIcon className="h-6 w-6"/>
+                  <div className="grid ">
+                    <h2 className="font-bold text-lg">Contact Email:</h2>
+                  </div>
+                </div>
+
+                <Link to={currentJob && currentJob[0].website} target="_blank" className="font-bold hover:text-green-700 flex items-center gap-1">
+                 {currentJob && currentJob[0].email}
                 </Link>
               </div>
             </div>
