@@ -117,6 +117,15 @@ const Home = () => {
   const [jobsList, setJobsList] = useState([])
   const [filteredJobsList, setFilteredJobsList] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
+
+  const descriptionExceedLetters = (description) => {
+    if (description.length >= 65) {
+      const newDescription = `${description.substr(0, 65)}...`
+      return newDescription
+    } else {
+      return description
+    }
+  }
   
 
   const handleJobSearch = () => {
@@ -161,7 +170,7 @@ const Home = () => {
                   <Star1 className="h-6 w-6 cursor-pointer" />
                 </div>
                 <div className="text-slate-800 text-[0.9rem]">
-                  {job.description}
+                  {descriptionExceedLetters(job.description)}
                 </div>
                 <div className="text-slate-800 text-[0.9rem]">
                   <h2 className="flex items-center gap-1">
