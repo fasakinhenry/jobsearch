@@ -4,5 +4,6 @@
 - Create Home for the personal dashboard
 - Create browse jobs
 - Add notifications menu
-- Add connection feeds
+- Add connection feed
+- Make app reflect goal
 
