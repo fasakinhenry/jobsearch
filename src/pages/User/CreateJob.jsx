@@ -23,7 +23,7 @@ const CreateJob = () => {
   return (
     <div className="py-5">
       <GridBackground />
-      <div className="relative z-30 container px-6 md:px-20">
+      <div className="relative z-30 mx-auto container px-6 md:px-20">
         <div className="sticky backdrop-blur top-0 w-full py-4 flex items-center justify-between gap-6">
           <Link to="/" className="text-3xl font-bold">
             Joblier
