@@ -2,6 +2,20 @@
 
 This project is a JobSearch application built with Reac, Tailwind and Appwrite. It allows users to search for jobs, view job details, and apply for jobs directly through the app.
 
+## Why we built Joblier
+
+From my personal experience, the best ways to get jobs are by following three startegies that works 100% of the time. These strategies are:
+
+1. Building your skills
+2. Connecting with people
+3. Building your reputation
+
+These steps are really explanatory and these three concepts must be mastered so you can regarded when it comes to Job.
+
+It is advisable that you build your skills and then connect with people and build your reputation as a good and knowledgeable person that can be trusted with Jobs and would deliver with satisfaction. You can do all at once and that's why we built Joblier.
+
+Joblier aims to help you get the hang of these three concepts all at a time with the best user experience for everyone. Both the employers and people searching for Jobs.
+
 ## Features
 
 - Search for jobs by keyword, location, and category
