@@ -6,8 +6,8 @@ const db = {};
 const collections = [
   {
     dbId: import.meta.env.VITE_DATABASE_ID,
-    id: import.meta.env.VITE_COLLECTION_ID_BOOKMARKS,
-    name: "",
+    id: import.meta.env.VITE_COLLECTION_ID_JOBS,
+    name: "jobs",
   },
 ];
 
