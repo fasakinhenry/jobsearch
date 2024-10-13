@@ -7,3 +7,13 @@
 - Add connection feed
 - Make app reflect goal
 
+## Navbar Items
+
+- Home
+- Browse Jobs
+- Feed
+- Notifications
+- Learn
+- Projects
+- Challenges
+- Profile(Settings, update account, preferences)

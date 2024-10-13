@@ -46,7 +46,7 @@ const TopBar = () => {
         </div>
       )}
       <GridBackground />
-      <div className="container z-20 px-6 md:px-20 relative grid gap-4">
+      <div className="container mx-auto z-20 px-6 md:px-20 relative grid gap-4">
         <div className="flex items-center justify-between md:justify-normal gap-20">
           <Link to="/" className="text-3xl font-bold">
             Joblier
