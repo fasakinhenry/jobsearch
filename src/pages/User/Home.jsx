@@ -6,6 +6,7 @@ import { Briefcase, Money4, Star1 } from 'iconsax-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { jobs } from './jobs';
+import db from '../../appwrite/databases';
 
 const Home = () => {
   const [jobsList, setJobsList] = useState([]);
@@ -18,6 +19,12 @@ const Home = () => {
       : description;
   };
 
+  const fetchJobs = async () => {
+    const res = await db.jobs.list();
+    const data = await res.documents
+    setJobsList(data)
+    console.log(data)
+  }
   const showJobImage = (image) => {
     return new Promise((resolve) => {
       const img = new Image();
@@ -41,9 +48,9 @@ const Home = () => {
   const handleJobSearch = () => {};
 
   useEffect(() => {
-    setJobsList(jobs);
     setFilteredJobsList(jobs);
     fetchImages();
+    fetchJobs()
   }, []);
 
   useEffect(() => {
@@ -63,10 +70,10 @@ const Home = () => {
         </div>
         <div className='grid mt-5'>
           <div className='grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-5 gap-5 px-1 py-1'>
-            {jobsList.map((job) => (
+            {jobsList.length !==0 && jobsList.map((job) => (
               <Link
-                to={`/jobs/${job.id}`}
-                key={job.id}
+                to={`/jobs/${job._id}`}
+                key={job._id}
                 className='grid scale border border-gray-100 hover:border-green-500  transition cursor-pointer bg-gray-100 shadow-md gap-4 rounded-xl px-4 py-3 overflow-hidden'
               >
                 <div className='flex gap-3 items-center'>
