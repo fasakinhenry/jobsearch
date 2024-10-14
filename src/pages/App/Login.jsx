@@ -1,10 +1,33 @@
-import { GridBackground } from "./LandingPage";
-import { EnvelopeIcon, KeyIcon } from "@heroicons/react/24/outline";
+// React imports
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+// Assets imports
+import { EnvelopeIcon, KeyIcon } from "@heroicons/react/24/outline";
 import { Briefcase } from "iconsax-react";
 import Google from "../../assets/images/icons/Google.svg";
 
+// Pages imports
+import { GridBackground } from "./LandingPage";
+import { useAuth } from "../../context/AuthContext";
+
 const Login = () => {
+  const { user, loginUser } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const login = () => {
+    const userInfo = {
+      email,
+      password  
+    }
+    loginUser(userInfo)
+  }
+
+  useEffect(() => {
+    if (user) {
+
+    }
+  },[])
   return (
     <div className="flex  bg-blue-50 font-sans overflow-hidden">
       <GridBackground />
@@ -32,6 +55,8 @@ const Login = () => {
                     className="w-full"
                     type="email"
                     placeholder="example@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
@@ -43,6 +68,8 @@ const Login = () => {
                     className="w-full"
                     type="password"
                     placeholder="a very secure password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
               </div>
@@ -59,6 +86,7 @@ const Login = () => {
             <button
               type="submit"
               className="p-3 mt-3 flex gap-2 hover:bg-green-600 cursor-pointer items-center justify-center bg-green-500 rounded-full text-white font-bold hover:shadow-md"
+              onClick={login}
             >
               <p>Login</p>
             </button>
