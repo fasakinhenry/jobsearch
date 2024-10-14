@@ -1,5 +1,5 @@
 // React imports
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 // Assets imports
 import { EnvelopeIcon, KeyIcon } from "@heroicons/react/24/outline";
@@ -14,6 +14,7 @@ const Login = () => {
   const { user, loginUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
 
   const login = (e) => {
     e.preventDefault()
@@ -26,7 +27,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-
+      navigate('/home')
     }
   },[])
   return (
