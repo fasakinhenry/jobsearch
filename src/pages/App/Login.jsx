@@ -15,7 +15,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const login = () => {
+  const login = (e) => {
+    e.preventDefault()
     const userInfo = {
       email,
       password  
