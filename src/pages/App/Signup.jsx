@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GridBackground } from './LandingPage';
-import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
-import Google from '../../assets/images/icons/Google.svg';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Signup = () => {
   const [step, setStep] = useState(1);
@@ -12,6 +11,8 @@ const Signup = () => {
     socialProfiles: { linkedIn: '', twitter: '', github: '' },
     aboutBio: { about: '', bio: '' },
   });
+  const navigate = useNavigate()
+  const {user,registerUser} = useAuth()
 
   const handleNext = () => {
     // Basic validation logic before moving to the next step
@@ -36,6 +37,12 @@ const Signup = () => {
       [section]: { ...prevData[section], [name]: value },
     }));
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate('/home')
+    }
+  },[])
 
   return (
     <div className='flex bg-blue-50 font-sans overflow-hidden'>
