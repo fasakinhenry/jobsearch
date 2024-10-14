@@ -6,7 +6,7 @@ const Header = () => {
     <header className='bg-white border-b border-gray-200 p-4'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-6'>
-          <h1 className='text-2xl font-bold'>JobTrack</h1>
+          <h1 className='text-2xl font-bold'>Joblier</h1>
           <nav>
             <ul className='flex space-x-4'>
               <li>
