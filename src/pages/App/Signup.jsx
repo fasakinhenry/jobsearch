@@ -103,7 +103,7 @@ const Signup = () => {
                   Add other social channels ✨
                 </p>
                 <div className='flex justify-between items-center mb-2'>
-                  <button className='font-bold py-4 px-7 hover:bg-gray-300 cursor-pointer bg-gray-200 rounded-full'>
+                  <button className='font-bold py-3 px-7 hover:bg-gray-300 cursor-pointer bg-gray-200 rounded-full'>
                     Upload LinkedIn Bio
                   </button>
                 </div>
