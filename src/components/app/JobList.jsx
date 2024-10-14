@@ -10,17 +10,17 @@ const JobCard = ({
   date,
   description,
 }) => (
-  <div className='bg-white rounded-lg shadow-md p-6 mb-4'>
+  <div className='bg-white rounded-lg shadow-md p-4 md:p-6 mb-4'>
     <div className='flex justify-between items-start mb-4'>
       <div>
-        <h3 className='text-xl font-semibold'>{title}</h3>
+        <h3 className='text-lg md:text-xl font-semibold'>{title}</h3>
         <p className='text-gray-600'>{company}</p>
       </div>
       <button className='text-gray-400'>
         <MoreVertical size={20} />
       </button>
     </div>
-    <div className='flex items-center space-x-4 text-sm text-gray-500 mb-4'>
+    <div className='flex flex-wrap items-center space-x-2 md:space-x-4 text-xs md:text-sm text-gray-500 mb-4'>
       <span className='flex items-center'>
         <Clock size={16} className='mr-1' /> Full Time
       </span>
@@ -31,11 +31,13 @@ const JobCard = ({
         <MapPin size={16} className='mr-1' /> {location}
       </span>
     </div>
-    <p className='text-gray-700 mb-4'>{description}</p>
-    <div className='flex justify-between items-center'>
-      <span className='text-blue-500 font-semibold'>{salary}/Month</span>
-      <span className='text-gray-500'>{applicants} Applied</span>
-      <button className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded'>
+    <p className='text-gray-700 mb-4 text-sm md:text-base'>{description}</p>
+    <div className='flex flex-wrap justify-between items-center'>
+      <span className='text-blue-500 font-semibold text-sm md:text-base'>
+        {salary}/Month
+      </span>
+      <span className='text-gray-500 text-sm'>{applicants} Applied</span>
+      <button className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm md:text-base mt-2 md:mt-0'>
         Apply Now
       </button>
     </div>
