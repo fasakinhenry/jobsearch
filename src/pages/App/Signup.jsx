@@ -58,6 +58,7 @@ const Signup = () => {
 
             {step === 1 && (
               <div className='grid gap-2'>
+                <p className='mb-2 text-[1.2rem]'>Share a bit more about you</p>
                 <div className='grid gap-1'>
                   <label className='font-bold'>Name:</label>
                   <input
@@ -97,7 +98,7 @@ const Signup = () => {
             {step === 2 && (
               <div className='grid gap-2'>
                 <div className='flex justify-between items-center mb-2'>
-                  <button className='text-blue-500 font-bold'>
+                  <button className='font-bold py-4 px-7 hover:bg-gray-300 cursor-pointer bg-gray-200 rounded-full'>
                     Upload LinkedIn Bio
                   </button>
                 </div>
@@ -139,6 +140,10 @@ const Signup = () => {
 
             {step === 3 && (
               <div className='grid gap-2'>
+                <p className='mb-2 text-[1.2rem]'>
+                  Craft your story: Showcase your unique talents, profession and
+                  experience
+                </p>
                 <div className='grid gap-1'>
                   <label className='font-bold'>About:</label>
                   <textarea
@@ -168,7 +173,7 @@ const Signup = () => {
                   Review your details before submission
                 </p>
                 {/* You can list all the formData here for review */}
-                <button className='bg-green-500 p-3 mt-3 rounded-full text-white font-bold hover:shadow-md'>
+                <button className='bg-green-500 text-white py-3 px-7 rounded-full font-bold hover:shadow-md w-full'>
                   Submit
                 </button>
               </div>
@@ -179,7 +184,7 @@ const Signup = () => {
                 <button
                   type='button'
                   onClick={handleBack}
-                  className='text-gray-500 font-bold'
+                  className='text-gray-500 font-bold py-2 w-full border-green-500 border-2 mr-2 rounded-full'
                 >
                   Back
                 </button>
@@ -188,7 +193,7 @@ const Signup = () => {
                 <button
                   type='button'
                   onClick={handleNext}
-                  className='bg-green-500 text-white p-3 rounded-full font-bold hover:shadow-md'
+                  className='bg-green-500 text-white py-4 px-7 rounded-full font-bold hover:shadow-md w-full'
                 >
                   Next
                 </button>
