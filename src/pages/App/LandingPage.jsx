@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { LightBulbIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+  LightBulbIcon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline';
 
 // Importing all 12 avatars from assets/avatars
 import avatar_1 from '../../assets/images/avatars/avatar1.png';
@@ -32,7 +35,7 @@ const avatars = [
   avatar_12,
 ];
 
-export  const GridBackground = () => (
+export const GridBackground = () => (
   <svg
     width='100%'
     height='100%'
@@ -123,7 +126,7 @@ const LandingPage = () => {
         <header className='flex justify-between items-center py-4'>
           <div className='text-xl md:text-2xl font-bold'>Joblier</div>
           <nav className='hidden md:flex space-x-6'>
-            <a href='#' className='text-gray-600 hover:text-gray-900'>
+            <a href='/home' className='text-gray-600 hover:text-gray-900'>
               Home
             </a>
             <a href='#' className='text-gray-600 hover:text-gray-900'>
@@ -140,10 +143,16 @@ const LandingPage = () => {
             </a>
           </nav>
           <div className='flex items-center space-x-4'>
-            <Link to="/login" className='border-green-500 border-2 px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'>
+            <Link
+              to='/login'
+              className='border-green-500 border-2 px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'
+            >
               Login
             </Link>
-            <Link to="/signup" className='bg-green-500 text-white px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'>
+            <Link
+              to='/signup'
+              className='bg-green-500 text-white px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full'
+            >
               Sign up
             </Link>
             <button
@@ -237,8 +246,8 @@ const LandingPage = () => {
               className='flex-grow px-3 w-full md:px-4 py-2 text-sm md:text-base focus:outline-none'
             />
             <button className='flex items-cetner space-x-2 bg-green-500 text-white p-2 px-6 rounded-full'>
-              <MagnifyingGlassIcon  className='w-6 h-6'/>
-             <p>Search</p>
+              <MagnifyingGlassIcon className='w-6 h-6' />
+              <p>Search</p>
             </button>
           </div>
         </main>
