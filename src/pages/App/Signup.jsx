@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GridBackground } from './LandingPage';
+import { GridBackground } from '../../assets/GridBackground';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
@@ -175,8 +175,10 @@ const Signup = () => {
             {step === 4 && (
               <div className='text-center'>
                 <p className='mb-5'>
-                  🎉 You did it! Hit the <span className='font-bold'>submit</span> button to explore what's in for
-                  you or <span className='font-bold'>Back</span> to review submission
+                  🎉 You did it! Hit the{' '}
+                  <span className='font-bold'>submit</span> button to explore
+                  what's in for you or <span className='font-bold'>Back</span>{' '}
+                  to review submission
                 </p>
                 {/* You can list all the formData here for review */}
                 <button className='bg-green-500 text-white py-3 px-7 rounded-full font-bold hover:shadow-md w-full'>
