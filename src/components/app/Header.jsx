@@ -13,7 +13,7 @@ const Header = ({ onMenuClick }) => {
         </div>
         <nav className="hidden md:block">
           <ul className="flex space-x-4">
-            <li><a href="#" className="text-blue-500">Find Work</a></li>
+            <li><a href="#" className="text-green-500">Find Work</a></li>
             <li><a href="#" className="text-gray-600">Portfolio</a></li>
             <li><a href="#" className="text-gray-600">Applications</a></li>
             <li><a href="#" className="text-gray-600">Community</a></li>
