@@ -12,8 +12,11 @@
 - Home
 - Browse Jobs
 - Feed
-- Notifications
 - Learn
 - Projects
 - Challenges
+
+### Right Icons
+
 - Profile(Settings, update account, preferences)
+- Notifications

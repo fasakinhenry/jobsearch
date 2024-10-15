@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { GridBackground } from "./LandingPage";
-import { Briefcase } from "iconsax-react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useState } from 'react';
+import { GridBackground } from '../../assets/GridBackground';
+import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+import { Briefcase } from 'iconsax-react';
+import Google from '../../assets/images/icons/Google.svg';
 
 const Signup = () => {
   const [step, setStep] = useState(1);
@@ -180,11 +181,11 @@ const Signup = () => {
             )}
 
             {step === 4 && (
-              <div className="text-center">
-                <p className="mb-5">
-                  🎉 You did it! Hit the{" "}
-                  <span className="font-bold">submit</span> button to explore
-                  what's in for you or <span className="font-bold">Back</span>{" "}
+              <div className='text-center'>
+                <p className='mb-5'>
+                  🎉 You did it! Hit the{' '}
+                  <span className='font-bold'>submit</span> button to explore
+                  what's in for you or <span className='font-bold'>Back</span>{' '}
                   to review submission
                 </p>
                 {/* You can list all the formData here for review */}
