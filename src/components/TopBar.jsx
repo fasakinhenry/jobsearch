@@ -10,7 +10,7 @@ import {
   User,
   UserSquare,
 } from 'iconsax-react';
-import { GridBackground } from '../assets/GridBackground';
+import GridBackground from '../assets/GridBackground.svg';
 import {
   BellIcon,
   ChatBubbleBottomCenterTextIcon,

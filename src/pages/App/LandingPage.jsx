@@ -3,7 +3,7 @@ import {
   LightBulbIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
-import { GridBackground } from '../../assets/GridBackground';
+import GridBackground from '../../assets/GridBackground.svg';
 
 // Importing all 12 avatars from assets/avatars
 import avatar_1 from '../../assets/images/avatars/avatar1.png';
