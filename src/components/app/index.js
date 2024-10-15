@@ -1,4 +1,4 @@
-import Header from './header';
+import Header from './Header';
 import JobList from './JobList';
 import Sidebar from './Sidebar';
 import SuggestedJobs from './SuggestedJobs';
