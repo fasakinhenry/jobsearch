@@ -25,7 +25,7 @@ const Home = () => {
                 Explore the latest job openings and apply for the best job
                 opportunities available today!
               </p>
-              <div className='flex flex-col bg-white rounded-full p-1 sm:flex-row'>
+              <div className='flex flex-col sm:flex-row'>
                 <input
                   type='text'
                   placeholder='Search Job'
@@ -33,7 +33,7 @@ const Home = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <button className='bg-green-600 hover:bg-green-700 rounded-full sm:rounded-l-none px-6 py-2'>
+                <button className='bg-green-600 hover:bg-green-700 rounded-lg sm:rounded-l-none px-6 py-2'>
                   Search
                 </button>
               </div>

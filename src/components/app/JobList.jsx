@@ -70,6 +70,7 @@ const JobList = () => {
 
   return (
     <div>
+      <div className='mb-3 font-bold text-2xl'>Recommended Jobs</div>
       {jobs.map((job, index) => (
         <JobCard key={index} {...job} />
       ))}
