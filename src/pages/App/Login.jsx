@@ -1,13 +1,13 @@
-import { GridBackground } from "./LandingPage";
 import { EnvelopeIcon, KeyIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { Briefcase } from "iconsax-react";
 import Google from "../../assets/images/icons/Google.svg";
+import GridBackground from '../../assets/images/GridBackground.svg'
 
 const Login = () => {
   return (
     <div className="flex  bg-blue-50 font-sans overflow-hidden">
-      <GridBackground />
+      {/* <GridBackground /> */}
       <div className="min-h-screen w-full z-10 relative flex">
         <div className="md:flex hidden w-full p-8 bg-green-500 text-white">
           <div className="flex flex-col flex-grow justify-center items-center text-center gap-3">
