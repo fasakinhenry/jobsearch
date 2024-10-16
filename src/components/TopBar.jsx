@@ -10,7 +10,7 @@ import {
   User,
   UserSquare,
 } from 'iconsax-react';
-import { GridBackground } from "../pages/App/LandingPage";
+import GridBackground from '../assets/images/GridBackground.svg';
 import {
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
@@ -45,7 +45,11 @@ const TopBar = () => {
           </div>
         </div>
       )}
-      <GridBackground />
+      <img
+        src={GridBackground}
+        alt='Background Grid'
+        className='absolute inset-0 w-full h-full object-cover z-0'
+      />
       <div className='container mx-auto z-20 px-6 md:px-20 relative grid gap-4'>
         <div className='flex items-center justify-between md:justify-normal gap-20'>
           <Link to='/' className='text-3xl font-bold'>
