@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import GridBackground from '../../assets/images/GridBackground.svg';
+import gridBackground from '../../assets/images/GridBackground.svg';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
@@ -40,7 +40,7 @@ const Signup = () => {
   return (
     <div className='flex bg-blue-50 font-sans overflow-hidden'>
       <img
-        src={GridBackground}
+        src={gridBackground}
         alt='Background Grid'
         className='absolute inset-0 w-full h-full object-cover z-0'
       />
