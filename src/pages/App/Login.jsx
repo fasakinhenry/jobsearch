@@ -1,4 +1,4 @@
-import GridBackground from '../../assets/images/GridBackground.svg';
+import GridBackground from '../../assets/images/grid-background.svg';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
