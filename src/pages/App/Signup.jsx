@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import gridBackground from '../../assets/images/grid-background.svg';
+import gridBackground from '../../assets/images/gridbackground.svg';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';

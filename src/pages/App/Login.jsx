@@ -1,4 +1,4 @@
-import GridBackground from '../../assets/images/grid-background.svg';
+import gridBackground from '../../assets/images/gridbackground.svg';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <div className='flex  bg-blue-50 font-sans overflow-hidden'>
       <img
-        src={GridBackground}
+        src={gridBackground}
         alt='Background Grid'
         className='absolute inset-0 w-full h-full object-cover z-0'
       />

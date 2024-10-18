@@ -10,7 +10,7 @@ import {
   User,
   UserSquare,
 } from 'iconsax-react';
-import GridBackground from '../assets/images/GridBackground.svg';
+import gridBackground from '../assets/images/gridbackground.svg';
 import {
   BellIcon,
   ChatBubbleBottomCenterTextIcon,
@@ -46,7 +46,7 @@ const TopBar = () => {
         </div>
       )}
       <img
-        src={GridBackground}
+        src={gridBackground}
         alt='Background Grid'
         className='absolute inset-0 w-full h-full object-cover z-0'
       />

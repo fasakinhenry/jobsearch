@@ -3,7 +3,7 @@ import {
   LightBulbIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
-import GridBackground from '../../assets/images/grid-background.svg';
+import gridBackground from '../../assets/images/gridbackground.svg';
 import hamburgerIcon from '../../assets/images/icons/hamburger.svg';
 import closeIcon from '../../assets/images/icons/close-icon.svg';
 
@@ -129,7 +129,11 @@ const LandingPage = () => {
         alt='Grid Background'
         className='absolute inset-0 z-0 w-full h-full'
       /> */}
-      <GridBackground />
+      <img
+        src={gridBackground}
+        alt='Grid Background'
+        className='absolute inset-0 z-0 w-full h-full'
+      />
       <div className='container mx-auto px-4 relative z-10'>
         <header className='flex justify-between items-center py-4'>
           <div className='text-xl md:text-2xl font-bold'>Joblier</div>
