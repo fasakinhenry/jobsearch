@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Header, Sidebar, JobList, SuggestedJobs } from '../../components/app';
-import { GridBackground } from "../App/LandingPage";
+import GridBackground from '../../assets/images/GridBackground.svg'
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
