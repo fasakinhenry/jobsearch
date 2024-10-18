@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Backward, Briefcase } from 'iconsax-react';
 import avatar from '../../assets/images/avatars/avatar4.png';
 import { Button } from '../../components';
-import GridBackground from '../../assets/images/GridBackground.svg';
+import GridBackground from '../../assets/images/grid-background.svg';
 import { useEffect, useState } from 'react';
 import db from '../../appwrite/databases';
 
