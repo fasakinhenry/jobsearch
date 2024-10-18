@@ -16,7 +16,9 @@
     "lucide-react": "^0.452.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "react-spinners": "^0.14.1",
+    "sweetalert2": "^11.14.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
