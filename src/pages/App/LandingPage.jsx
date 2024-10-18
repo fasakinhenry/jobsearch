@@ -3,7 +3,7 @@ import {
   LightBulbIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
-import GridBackground from '../../assets/images/GridBackground.svg';
+import GridBackground from '../../assets/images/grid-background.svg';
 import hamburgerIcon from '../../assets/images/icons/hamburger.svg';
 import closeIcon from '../../assets/images/icons/close-icon.svg';
 
