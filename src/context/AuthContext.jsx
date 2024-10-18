@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
         Swal.fire({
           toast: true,
           icon: "error",
-          text: "Invlaid username or Email",
+          text: "Invalid username or Email",
           timer: 4000,
           position: "top",
           showConfirmButton: false,
@@ -149,7 +149,7 @@ export const AuthProvider = ({ children }) => {
       {loading ? (
         <div className="w-[100vw] h-[100vh] grid items-center justify-center bg-gray-50 overflow-hidden anmate-load">
           <div className="text-center app-text-color justify-items-center grid gap-4 mx-auto">
-            <h2 className="text-3xl">Joblier</h2>
+            <h2 className="text-3xl font-bold">Joblier</h2>
             <BarLoader loading={loading} />
           </div>
         </div>
