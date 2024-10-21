@@ -29,7 +29,7 @@ const Home = () => {
                 <input
                   type='text'
                   placeholder='Search Job'
-                  className='flex-grow rounded-lg sm:rounded-r-none px-4 py-2 text-black mb-2 sm:mb-0'
+                  className='flex-grow placeholder:text-gray-100 rounded-lg sm:rounded-r-none px-4 py-2 text-black mb-2 sm:mb-0'
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
