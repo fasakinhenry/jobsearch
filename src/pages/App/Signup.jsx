@@ -8,6 +8,9 @@ import { useAuth } from '../../context/AuthContext';
 
 const Signup = () => {
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const { registerUser } = useAuth();
   const [formData, setFormData] = useState({
     personalDetails: { name: '', email: '', password: '' },
     socialProfiles: { linkedIn: '', twitter: '', github: '' },
@@ -36,6 +39,29 @@ const Signup = () => {
       ...prevData,
       [section]: { ...prevData[section], [name]: value },
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      // Consolidate all form data into one object
+      const { personalDetails, socialProfiles, aboutBio } = formData;
+      const data = {
+        ...personalDetails,
+        ...socialProfiles,
+        ...aboutBio,
+      };
+
+      await signup(data); // Call the signup function from useAuth
+      alert('Signup successful!');
+      setLoading(false);
+    } catch (err) {
+      setError('Failed to create an account. Please try again.');
+      setLoading(false);
+    }
   };
 
   return (
