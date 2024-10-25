@@ -49,13 +49,13 @@ const Signup = () => {
     try {
       // Consolidate all form data into one object
       const { personalDetails, socialProfiles, aboutBio } = formData;
-      const data = {
+      const userInfo = {
         ...personalDetails,
         ...socialProfiles,
         ...aboutBio,
       };
 
-      await signup(data); // Call the signup function from useAuth
+      await registerUser(userInfo); // Call the signup function from useAuth
       alert('Signup successful!');
       setLoading(false);
     } catch (err) {
@@ -82,10 +82,12 @@ const Signup = () => {
           </div>
         </div>
         <div className='flex flex-col w-full md:3/5 p-8'>
-          <form className='flex-grow flex flex-col justify-center max-w-md mx-auto w-full'>
+          <form onSubmit={handleSubmit} className='flex-grow flex flex-col justify-center max-w-md mx-auto w-full'>
             <h2 className='text-4xl mb-8 font-bold text-left'>
               Create your account 🖐
             </h2>
+            {error && <p className='text-red-500'>{error}</p>}
+            {loading && <p>Loading...</p>}
 
             {step === 1 && (
               <div className='grid gap-2'>
