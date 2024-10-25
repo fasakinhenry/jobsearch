@@ -4,6 +4,7 @@ import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
 import Google from '../../assets/images/icons/Google.svg';
+import { useAuth } from '../../context/AuthContext';
 
 const Signup = () => {
   const [step, setStep] = useState(1);
