@@ -58,7 +58,7 @@ const Signup = () => {
         email: email,
       };
       await registerUser(userInfo);
-      console.log(userInfo) // Only pass necessary fields for Appwrite registration
+      console.log(userInfo); // Only pass necessary fields for Appwrite registration
       setLoading(false);
     } catch (err) {
       setError('Failed to create an account. Please try again.');

@@ -1,9 +1,10 @@
 import { useContext, useState, createContext, useEffect } from 'react';
 import BarLoader from 'react-spinners/BarLoader';
 import Swal from 'sweetalert2';
-const AuthContext = createContext();
 import { account } from '../appwrite/config';
 import { ID } from 'appwrite';
+
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
