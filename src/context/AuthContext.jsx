@@ -54,9 +54,9 @@ export const AuthProvider = ({ children }) => {
     try {
       await account.create(
         ID.unique(),
-        userInfo.name,
         userInfo.email,
         userInfo.password,
+        userInfo.username
       );
 
       // Logs user in after creating account
