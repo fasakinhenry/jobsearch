@@ -56,11 +56,6 @@ export const AuthProvider = ({ children }) => {
         userInfo.name,
         userInfo.email,
         userInfo.password,
-        userInfo.linkedin,
-        userInfo.twitter,
-        userInfo.github,
-        userInfo.about,
-        userInfo.bio
       );
 
       // Logs user in after creating account
