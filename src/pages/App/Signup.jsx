@@ -12,7 +12,7 @@ const Signup = () => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const { registerUser, user } = useAuth();
+  const { registerUser } = useAuth();
 
   // Individual states for each field
   const [name, setName] = useState('');
