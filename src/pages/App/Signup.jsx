@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import gridBackground from '../../assets/images/gridbackground.svg';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
@@ -44,20 +44,37 @@ const Signup = () => {
     setLoading(true);
     setError('');
 
-    const userInfo = {
-      email: email.trim(),
-      password: password,
-      username: name.trim(),
-    };
+    const promise = account.create(id, email, password, name);
+    promise.then(
+      function (response) {
+        console.log(response);
+        navigate('/home', {
+          state: {
+            userId: response?.$id,
+            name: response?.name,
+          },
+        }); //success
+      },
+      function (err) {
+        console.log(err); //failure
+      }
+    );
+
+    // const userInfo = {
+    //   email: email.trim(),
+    //   password: password,
+    //   username: name.trim(),
+    // };
     // console.log(registerUser(userInfo));
     // registerUser(userInfo);
-    try {
-      await registerUser(userInfo);
-    } catch (error) {
-      setError('Failed to create account. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+    // try {
+    //   await registerUser(userInfo);
+    // } catch (error) {
+    //   setError('Failed to create account. Please try again.');
+    // } finally {
+    //   setLoading(false);
+    // }
+    setLoading(false);
   };
 
   return (
