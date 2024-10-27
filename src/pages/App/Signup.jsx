@@ -7,6 +7,7 @@ import { Briefcase } from 'iconsax-react';
 import Google from '../../assets/images/icons/Google.svg';
 import { useAuth } from '../../context/AuthContext';
 import { account } from '../../appwrite/config';
+import { ID } from 'appwrite';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -24,6 +25,13 @@ const Signup = () => {
   const [github, setGithub] = useState('');
   const [about, setAbout] = useState('');
   const [bio, setBio] = useState('');
+
+  // Create a user object
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   const handleNext = () => {
     if (step === 1 && !name) return alert('Please enter your name.');
@@ -44,7 +52,12 @@ const Signup = () => {
     setLoading(true);
     setError('');
 
-    const promise = account.create(id, email, password, name);
+    const promise = account.create(
+      ID.unique(),
+      user.email,
+      user.password,
+      user.name
+    );
     promise.then(
       function (response) {
         console.log(response);
@@ -117,7 +130,9 @@ const Signup = () => {
                     name='name'
                     placeholder='Your Full Name'
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      setUser({ ...user, name: e.target.value });
+                    }}
                     className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
                   />
                 </div>
@@ -128,7 +143,9 @@ const Signup = () => {
                     name='email'
                     placeholder='example@gmail.com'
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setUser({ ...user, email: e.target.value });
+                    }}
                     className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
                   />
                 </div>
@@ -139,7 +156,9 @@ const Signup = () => {
                     name='password'
                     placeholder='Choose a secure password'
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => {
+                      setUser({ ...user, password: e.target.value });
+                    }}
                     className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
                   />
                 </div>
