@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
 import Google from '../../assets/images/icons/Google.svg';
 import { useAuth } from '../../context/AuthContext';
+import { account } from '../../appwrite/config';
 
 const Signup = () => {
   const navigate = useNavigate();
