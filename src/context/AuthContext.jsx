@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
 
     try {
-      await account.create(
+      const response = await account.create(
         ID.unique(),
         userInfo.email,
         userInfo.password,
@@ -66,7 +66,9 @@ export const AuthProvider = ({ children }) => {
       );
       let accountDetail = await account.get();
       setUser(accountDetail);
+      return response;
     } catch (err) {
+      console.error("Registration error:", err);
       // Check email duplicate error code.
       if (err.code == 409) {
         Swal.fire({

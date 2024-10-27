@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import gridBackground from '../../assets/images/gridbackground.svg';
+import { useNavigate } from "react-router-dom";
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
@@ -7,10 +8,11 @@ import Google from '../../assets/images/icons/Google.svg';
 import { useAuth } from '../../context/AuthContext';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const { registerUser } = useAuth();
+  const { registerUser, user } = useAuth();
 
   // Individual states for each field
   const [name, setName] = useState('');
@@ -41,27 +43,18 @@ const Signup = () => {
     setLoading(true);
     setError('');
 
+    const userInfo = {
+      email: email.trim(),
+      password: password,
+      username: name.trim(),
+    };
+    // console.log(registerUser(userInfo));
+    // registerUser(userInfo);
     try {
-      const data = {
-        name,
-        email,
-        password,
-        linkedIn,
-        twitter,
-        github,
-        about,
-        bio,
-      };
-      const userInfo = {
-        username: name,
-        password: password,
-        email: email,
-      };
       await registerUser(userInfo);
-      console.log(userInfo); // Only pass necessary fields for Appwrite registration
-      setLoading(false);
-    } catch (err) {
-      setError('Failed to create an account. Please try again.');
+    } catch (error) {
+      setError('Failed to create account. Please try again.');
+    } finally {
       setLoading(false);
     }
   };
