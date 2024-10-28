@@ -28,9 +28,9 @@ const Signup = () => {
 
   // Create a user object
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
 
   const handleNext = () => {
@@ -52,12 +52,7 @@ const Signup = () => {
     setLoading(true);
     setError('');
 
-    const promise = account.create(
-      ID.unique(),
-      user.email,
-      user.password,
-      user.name
-    );
+    const promise = account.create(ID.unique(), user.email, user.password, user.name);
     promise.then(
       function (response) {
         console.log(response);
@@ -130,9 +125,7 @@ const Signup = () => {
                     name='name'
                     placeholder='Your Full Name'
                     value={name}
-                    onChange={(e) => {
-                      setUser({ ...user, name: e.target.value });
-                    }}
+                    onChange={(e) => setName(e.target.value)}
                     className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
                   />
                 </div>
@@ -143,9 +136,7 @@ const Signup = () => {
                     name='email'
                     placeholder='example@gmail.com'
                     value={email}
-                    onChange={(e) => {
-                      setUser({ ...user, email: e.target.value });
-                    }}
+                    onChange={(e) => setEmail(e.target.value)}
                     className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
                   />
                 </div>
@@ -156,9 +147,7 @@ const Signup = () => {
                     name='password'
                     placeholder='Choose a secure password'
                     value={password}
-                    onChange={(e) => {
-                      setUser({ ...user, password: e.target.value });
-                    }}
+                    onChange={(e) => setPassword(e.target.value)}
                     className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
                   />
                 </div>
