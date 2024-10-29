@@ -62,7 +62,7 @@ const JobFilters = ({ filters, setFilters }) => {
           onChange={(e) =>
             setFilters((prev) => ({ ...prev, salaryRange: e.target.value }))
           }
-          className='w-full'
+          className='w-full custom-range'
         />
         <div className='flex justify-between text-sm text-gray-600'>
           <span>$50k</span>
