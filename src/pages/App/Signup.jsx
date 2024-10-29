@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import gridBackground from '../../assets/images/gridbackground.svg';
 import { useNavigate } from 'react-router-dom';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
 import Google from '../../assets/images/icons/Google.svg';
 import { useAuth } from '../../context/AuthContext';
@@ -233,7 +232,7 @@ const Signup = () => {
             {step === 4 && (
               <div className='text-center'>
                 <p className='mb-5'>
-                  🎉 You did it! Hit the{' '}
+                  🎉 You did it! Hit the
                   <span className='font-bold'>submit</span> button to explore
                   what's in for you or <span className='font-bold'>Back</span>{' '}
                   to review submission
