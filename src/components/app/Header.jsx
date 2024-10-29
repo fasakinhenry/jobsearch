@@ -3,7 +3,7 @@ import { Bell, MessageCircle, Menu } from 'lucide-react';
 import { Icon } from '@iconify/react';
 
 const Header = ({ onMenuClick }) => {
-  return (  
+  return (
     <header className='bg-white border-b border-gray-200 p-4'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-4'>
@@ -16,7 +16,7 @@ const Header = ({ onMenuClick }) => {
               className='w-8 h-8 text-blue-600'
             />
             <a to='/' className='text-xl md:text-2xl font-bold ml-2'>
-              GoJob
+              Joblier
             </a>
           </div>
         </div>
@@ -36,7 +36,7 @@ const Header = ({ onMenuClick }) => {
             </li>
             <li>
               <a href='#' className='text-gray-600 flex items-center'>
-                <Icon icon='mingcute:building-line' className='mr-2' />
+                <Icon icon='mingcute:building-1-fill' className='mr-2' />
                 Company
               </a>
             </li>
@@ -59,3 +59,5 @@ const Header = ({ onMenuClick }) => {
     </header>
   );
 };
+
+export default Header;
