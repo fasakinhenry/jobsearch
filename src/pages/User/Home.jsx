@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import { Header, JobList, SuggestedJobs } from '../../components/app';
-import ProfileSection from '../../components/ProfileSection';
-import JobStatus from '../../components/JobStatus';
-import TopSkills from '../../components/TopSkills';
+import {
+  Header,
+  JobList,
+  SuggestedJobs,
+  ProfileSection,
+  JobStatus,
+  TopSkills,
+} from '../../components/app';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
