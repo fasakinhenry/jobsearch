@@ -41,6 +41,21 @@ const FindWork = () => {
         { label: 'Remote', type: 'default' },
       ],
     },
+    {
+      id: 1,
+      title: 'Product designer',
+      company: 'MetaMask',
+      companyLogo: '/company-logos/metamask.png',
+      description:
+        'Doing the right thing for investors is what we are all about at Vanguard, and that includes...',
+      salary: 250,
+      postedTime: '12 days ago',
+      tags: [
+        { label: 'Entry Level', type: 'primary' },
+        { label: 'Full-Time', type: 'secondary' },
+        { label: 'Remote', type: 'default' },
+      ],
+    },
     // Add more mock jobs here
   ];
 
