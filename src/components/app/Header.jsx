@@ -3,7 +3,7 @@ import { Bell, MessageCircle, Menu } from 'lucide-react';
 import { Icon } from '@iconify/react';
 
 const Header = ({ onMenuClick }) => {
-  return (
+  return (  
     <header className='bg-white border-b border-gray-200 p-4'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-4'>
