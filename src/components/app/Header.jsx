@@ -46,14 +46,16 @@ const Header = ({ onMenuClick }) => {
             <li>
               <a href='#' className='text-gray-600 flex items-center'>
                 <Icon icon='mingcute:comment-2-line' className='mr-2' />
-                Community 
+                Community
               </a>
             </li>
           </ul>
         </nav>
         <div className='flex items-center space-x-4'>
-          <Bell className='text-gray-600' />
-          <MessageCircle className='text-gray-600' />
+          {/* <Bell className='text-gray-600' />
+          <MessageCircle className='text-gray-600' /> */}
+          <Icon icon='mingcute:notification-newdot-line' className='text-gray-600' />
+          <Icon icon='mingcute:message-3-line' className='text-gray-600' />
           <div className='w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center'>
             <Icon icon='mingcute:user-2-line' className='text-gray-600' />
           </div>
