@@ -5,7 +5,7 @@ import gridBackground from '../../assets/images/gridbackground.svg'
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  
   return (
     <div className='flex flex-col h-screen'>
       <Header onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
