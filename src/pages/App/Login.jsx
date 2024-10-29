@@ -14,6 +14,7 @@ const Login = () => {
   const { user, loginUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const navigate = useNavigate()
 
   const login = (e) => {
@@ -25,11 +26,11 @@ const Login = () => {
     loginUser(userInfo)
   }
 
-  useEffect(() => {
-    if (user) {
-      navigate('/home')
-    }
-  },[])
+    // useEffect(() => {
+    //   if (user) {
+    //     navigate('/home')
+    //   }
+    // },[])
   return (
     <div className='flex  bg-blue-50 font-sans overflow-hidden'>
       <img

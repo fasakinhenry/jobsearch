@@ -1,6 +1,4 @@
 import { useContext, useState, createContext, useEffect } from "react";
-import BarLoader from "react-spinners/BarLoader";
-import { NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import Swal from "sweetalert2";
 import { account } from "../appwrite/config";
