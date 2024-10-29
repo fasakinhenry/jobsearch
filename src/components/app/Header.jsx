@@ -13,9 +13,12 @@ const Header = ({ onMenuClick }) => {
           <div className='flex items-center'>
             <Icon
               icon='mingcute:group-line'
-              className='w-8 h-8 text-blue-600'
+              className='w-8 h-8 text-green-600'
             />
-            <a to='/' className='text-xl md:text-2xl font-bold ml-2'>
+            <a
+              to='/'
+              className='text-xl md:text-2xl font-bold ml-2 text-green-600'
+            >
               Joblier
             </a>
           </div>
@@ -23,27 +26,27 @@ const Header = ({ onMenuClick }) => {
         <nav className='hidden md:block'>
           <ul className='flex space-x-6'>
             <li>
-              <a href='#' className='text-blue-600 flex items-center'>
-                <Icon icon='mingcute:search-line' className='mr-2' />
-                Find Job
+              <a href='#' className='text-green-600 flex items-center'>
+                <Icon icon='mingcute:home-4-fill' className='mr-2' />
+                Home
               </a>
             </li>
             <li>
               <a href='#' className='text-gray-600 flex items-center'>
-                <Icon icon='mingcute:user-2-line' className='mr-2' />
-                Find Talent
+                <Icon icon='mingcute:search-3-line' className='mr-2' />
+                Find Jobs
               </a>
             </li>
             <li>
               <a href='#' className='text-gray-600 flex items-center'>
                 <Icon icon='mingcute:building-1-fill' className='mr-2' />
-                Company
+                Companies
               </a>
             </li>
             <li>
               <a href='#' className='text-gray-600 flex items-center'>
-                <Icon icon='mingcute:information-line' className='mr-2' />
-                About Us
+                <Icon icon='mingcute:comment-2-line' className='mr-2' />
+                Community 
               </a>
             </li>
           </ul>
