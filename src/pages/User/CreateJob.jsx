@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Backward, Briefcase } from 'iconsax-react';
 import avatar from '../../assets/images/avatars/avatar4.png';
 import { Button } from '../../components';
-import { GridBackground } from '../../assets/GridBackground';
+import gridBackground from '../../assets/images/gridbackground.svg';
 import { useEffect, useState } from 'react';
 import db from '../../appwrite/databases';
 
@@ -51,7 +51,11 @@ const CreateJob = () => {
   }, []);
   return (
     <div className='py-5'>
-      <GridBackground />
+      <img
+        src={gridBackground}
+        alt='Background Grid'
+        className='absolute inset-0 w-full h-full object-cover z-0'
+      />
       <div className='relative z-30 mx-auto container px-6 md:px-20'>
         <div className='sticky backdrop-blur top-0 w-full py-4 flex items-center justify-between gap-6'>
           <Link to='/' className='text-3xl font-bold'>

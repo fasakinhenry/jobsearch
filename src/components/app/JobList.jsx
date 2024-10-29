@@ -33,11 +33,11 @@ const JobCard = ({
     </div>
     <p className='text-gray-700 mb-4 text-sm md:text-base'>{description}</p>
     <div className='flex flex-wrap justify-between items-center'>
-      <span className='text-blue-500 font-semibold text-sm md:text-base'>
+      <span className='text-green-500 font-semibold text-sm md:text-base'>
         {salary}/Month
       </span>
       <span className='text-gray-500 text-sm'>{applicants} Applied</span>
-      <button className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm md:text-base mt-2 md:mt-0'>
+      <button className='bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded text-sm md:text-base mt-2 md:mt-0'>
         Apply Now
       </button>
     </div>
@@ -70,6 +70,7 @@ const JobList = () => {
 
   return (
     <div>
+      <div className='mb-3 font-bold text-2xl'>Recommended Jobs</div>
       {jobs.map((job, index) => (
         <JobCard key={index} {...job} />
       ))}

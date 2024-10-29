@@ -1,0 +1,27 @@
+<svg
+  width="40"
+  height="40"
+  viewBox="0 0 100 100"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle cx="50" cy="50" r="50" fill="#4ADE80" />
+  <rect
+    x="25"
+    y="30"
+    width="50"
+    height="10"
+    rx="5"
+    fill="white"
+    transform="rotate(45 50 50)"
+  />
+  <rect
+    x="25"
+    y="60"
+    width="50"
+    height="10"
+    rx="5"
+    fill="white"
+    transform="rotate(-45 50 50)"
+  />
+</svg>

@@ -67,6 +67,79 @@ input {
   height: 0;
 }
 
+::-webkit-scrollbar {
+  background-color: none;
+  width: 5px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--app-dark-green);
+  border-radius: 7px;
+}
+
 .scale:hover {
   transform: scale(1.04);
+}
+
+/* General slider styles */
+.custom-range {
+ -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #00b300 50%, #ddd 50%);
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.15s ease-in-out;
+}
+
+/* Track styling for WebKit browsers */
+.custom-range::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 5px;
+}
+
+/* Thumb styling for WebKit browsers */
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00b300;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: -4px; /* Centers the thumb */
+}
+
+/* Track styling for Firefox */
+.custom-range::-moz-range-track {
+  height: 8px;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+/* Thumb styling for Firefox */
+.custom-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00b300;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* Track styling for IE */
+.custom-range::-ms-track {
+  height: 8px;
+  border-radius: 5px;
+  background: #ddd;
+  color: transparent;
+}
+
+/* Thumb styling for IE */
+.custom-range::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00b300;
+  cursor: pointer;
+  border-radius: 50%;
 }

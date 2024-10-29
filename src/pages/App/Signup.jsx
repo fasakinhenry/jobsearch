@@ -1,21 +1,49 @@
 import { useState } from 'react';
-import { GridBackground } from '../../assets/GridBackground';
+import gridBackground from '../../assets/images/gridbackground.svg';
+import { useNavigate } from 'react-router-dom';
 import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
 import Google from '../../assets/images/icons/Google.svg';
+import { useAuth } from '../../context/AuthContext';
+import { account } from '../../appwrite/config';
+import { ID } from 'appwrite';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
+<<<<<<< HEAD
   const [formData, setFormData] = useState({
     personalDetails: { name: "", email: "", password: "" },
     socialProfiles: { linkedIn: "", twitter: "", github: "" },
     aboutBio: { about: "", bio: "" },
+=======
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const { registerUser } = useAuth();
+
+  // Individual states for each field
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [linkedIn, setLinkedIn] = useState('');
+  const [twitter, setTwitter] = useState('');
+  const [github, setGithub] = useState('');
+  const [about, setAbout] = useState('');
+  const [bio, setBio] = useState('');
+
+  // Create a user object
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
   });
   const navigate = useNavigate();
   const { user, registerUser } = useAuth();
 
   const handleNext = () => {
+<<<<<<< HEAD
     // Basic validation logic before moving to the next step
     if (step === 1 && !formData.personalDetails.name)
       return alert("Please enter your name.");
@@ -23,6 +51,13 @@ const Signup = () => {
       return alert("Please add your LinkedIn profile.");
     if (step === 3 && !formData.aboutBio.about)
       return alert("Please provide your about details.");
+=======
+    if (step === 1 && !name) return alert('Please enter your name.');
+    if (step === 2 && !linkedIn)
+      return alert('Please add your LinkedIn profile.');
+    if (step === 3 && !about)
+      return alert('Please provide your about details.');
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
 
     setStep(step + 1);
   };
@@ -31,12 +66,42 @@ const Signup = () => {
     setStep(step - 1);
   };
 
-  const handleChange = (e, section) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [section]: { ...prevData[section], [name]: value },
-    }));
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    const promise = account.create(ID.unique(), user.email, user.password, user.name);
+    promise.then(
+      function (response) {
+        console.log(response);
+        navigate('/home', {
+          state: {
+            userId: response?.$id,
+            name: response?.name,
+          },
+        }); //success
+      },
+      function (err) {
+        console.log(err); //failure
+      }
+    );
+
+    // const userInfo = {
+    //   email: email.trim(),
+    //   password: password,
+    //   username: name.trim(),
+    // };
+    // console.log(registerUser(userInfo));
+    // registerUser(userInfo);
+    // try {
+    //   await registerUser(userInfo);
+    // } catch (error) {
+    //   setError('Failed to create account. Please try again.');
+    // } finally {
+    //   setLoading(false);
+    // }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -46,6 +111,7 @@ const Signup = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div className="flex bg-blue-50 font-sans overflow-hidden">
       <GridBackground />
       <div className="min-h-screen w-full z-10 relative flex">
@@ -54,15 +120,40 @@ const Signup = () => {
             <Briefcase className="w-60 h-60" />
             <h2 className="text-4xl font-bold">Join Joblier Today.</h2>
             <p className="text-[1.1rem]">
+=======
+    <div className='flex bg-blue-50 font-sans overflow-hidden'>
+      <img
+        src={gridBackground}
+        alt='Background Grid'
+        className='absolute inset-0 w-full h-full object-cover z-0'
+      />
+      <div className='min-h-screen w-full z-10 relative flex'>
+        <div className='md:flex hidden w-full p-8 bg-green-500 text-white'>
+          <div className='flex flex-col flex-grow justify-center items-center text-center gap-3'>
+            <Briefcase className='w-60 h-60' />
+            <h2 className='text-4xl font-bold'>Join Joblier Today.</h2>
+            <p className='text-[1.1rem]'>
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
               Sign up and find your dream job with Joblier's powerful features.
             </p>
           </div>
         </div>
+<<<<<<< HEAD
         <div className="flex flex-col w-full md:3/5 p-8">
           <form className="flex-grow flex flex-col justify-center max-w-md mx-auto w-full">
             <h2 className="text-4xl mb-8 font-bold text-left">
+=======
+        <div className='flex flex-col w-full md:3/5 p-8'>
+          <form
+            onSubmit={handleSubmit}
+            className='flex-grow flex flex-col justify-center max-w-md mx-auto w-full'
+          >
+            <h2 className='text-4xl mb-8 font-bold text-left'>
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
               Create your account 🖐
             </h2>
+            {error && <p className='text-red-500'>{error}</p>}
+            {loading && <p>Loading...</p>}
 
             {step === 1 && (
               <div className="grid gap-2">
@@ -72,34 +163,61 @@ const Signup = () => {
                 <div className="grid gap-1">
                   <label className="font-bold">Name:</label>
                   <input
+<<<<<<< HEAD
                     type="text"
                     name="name"
                     placeholder="Your Full Name"
                     value={formData.personalDetails.name}
                     onChange={(e) => handleChange(e, "personalDetails")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm"
+=======
+                    type='text'
+                    name='name'
+                    placeholder='Your Full Name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
                 <div className="grid gap-1">
                   <label className="font-bold">Email:</label>
                   <input
+<<<<<<< HEAD
                     type="email"
                     name="email"
                     placeholder="example@gmail.com"
                     value={formData.personalDetails.email}
                     onChange={(e) => handleChange(e, "personalDetails")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm"
+=======
+                    type='email'
+                    name='email'
+                    placeholder='example@gmail.com'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
                 <div className="grid gap-1">
                   <label className="font-bold">Password:</label>
                   <input
+<<<<<<< HEAD
                     type="password"
                     name="password"
                     placeholder="Choose a secure password"
                     value={formData.personalDetails.password}
                     onChange={(e) => handleChange(e, "personalDetails")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm"
+=======
+                    type='password'
+                    name='password'
+                    placeholder='Choose a secure password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
               </div>
@@ -110,6 +228,7 @@ const Signup = () => {
                 <p className="mb-2 text-[1.1rem] font-medium">
                   Add other social channels ✨
                 </p>
+<<<<<<< HEAD
                 <div className="flex justify-between items-center mb-2">
                   <button className="font-bold py-3 px-7 hover:bg-gray-300 cursor-pointer bg-gray-200 rounded-full">
                     Upload LinkedIn Bio
@@ -124,57 +243,109 @@ const Signup = () => {
                     value={formData.socialProfiles.linkedIn}
                     onChange={(e) => handleChange(e, "socialProfiles")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm"
+=======
+                <div className='grid gap-1'>
+                  <label className='font-bold'>LinkedIn:</label>
+                  <input
+                    type='text'
+                    name='linkedIn'
+                    placeholder='LinkedIn Profile URL'
+                    value={linkedIn}
+                    onChange={(e) => setLinkedIn(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
                 <div className="grid gap-1">
                   <label className="font-bold">Twitter:</label>
                   <input
+<<<<<<< HEAD
                     type="text"
                     name="twitter"
                     placeholder="Twitter Handle"
                     value={formData.socialProfiles.twitter}
                     onChange={(e) => handleChange(e, "socialProfiles")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm"
+=======
+                    type='text'
+                    name='twitter'
+                    placeholder='Twitter Handle'
+                    value={twitter}
+                    onChange={(e) => setTwitter(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
                 <div className="grid gap-1">
                   <label className="font-bold">GitHub:</label>
                   <input
+<<<<<<< HEAD
                     type="text"
                     name="github"
                     placeholder="GitHub Username"
                     value={formData.socialProfiles.github}
                     onChange={(e) => handleChange(e, "socialProfiles")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm"
+=======
+                    type='text'
+                    name='github'
+                    placeholder='GitHub Username'
+                    value={github}
+                    onChange={(e) => setGithub(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded-full shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
               </div>
             )}
 
             {step === 3 && (
+<<<<<<< HEAD
               <div className="grid gap-2">
                 <p className="mb-2 text-[1.1rem] font-medium">
                   Craft your story: Showcase your unique talents, profession and
                   experience 😎
+=======
+              <div className='grid gap-2'>
+                <p className='mb-2 text-[1.1rem] font-medium'>
+                  Craft your story: Showcase your unique talents, profession,
+                  and experience 😎
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                 </p>
                 <div className="grid gap-1">
                   <label className="font-bold">About:</label>
                   <textarea
+<<<<<<< HEAD
                     name="about"
                     placeholder="Tell us a little about yourself"
                     value={formData.aboutBio.about}
                     onChange={(e) => handleChange(e, "aboutBio")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded shadow-sm"
+=======
+                    name='about'
+                    placeholder='Tell us a little about yourself'
+                    value={about}
+                    onChange={(e) => setAbout(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
                 <div className="grid gap-1">
                   <label className="font-bold">Bio:</label>
                   <textarea
+<<<<<<< HEAD
                     name="bio"
                     placeholder="Write a brief bio"
                     value={formData.aboutBio.bio}
                     onChange={(e) => handleChange(e, "aboutBio")}
                     className="w-full border-2 border-gray-200 px-4 py-3 rounded shadow-sm"
+=======
+                    name='bio'
+                    placeholder='Write a brief bio'
+                    value={bio}
+                    onChange={(e) => setBio(e.target.value)}
+                    className='w-full border-2 border-gray-200 px-4 py-3 rounded shadow-sm'
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   />
                 </div>
               </div>
@@ -189,7 +360,14 @@ const Signup = () => {
                   to review submission
                 </p>
                 {/* You can list all the formData here for review */}
+<<<<<<< HEAD
                 <button className="bg-green-500 text-white py-3 px-7 rounded-full font-bold hover:shadow-md w-full">
+=======
+                <button
+                  type='submit'
+                  className='bg-green-500 text-white py-3 px-7 rounded-full font-bold hover:shadow-md w-full'
+                >
+>>>>>>> f555f1534c0f61577be59b58be4f5b8db67651c8
                   Submit
                 </button>
               </div>

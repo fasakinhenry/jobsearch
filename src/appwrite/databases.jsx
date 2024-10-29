@@ -1,5 +1,5 @@
-import { databases } from "./config";
-import { ID } from "appwrite";
+import { databases } from './config';
+import { ID } from 'appwrite';
 
 const db = {};
 
@@ -7,7 +7,7 @@ const collections = [
   {
     dbId: import.meta.env.VITE_DATABASE_ID,
     id: import.meta.env.VITE_COLLECTION_ID_JOBS,
-    name: "jobs",
+    name: 'jobs',
   },
 ];
 

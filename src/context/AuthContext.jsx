@@ -1,8 +1,10 @@
 import { useContext, useState, createContext, useEffect } from "react";
-import BarLoader from "react-spinners/BarLoader";
+import { Icon } from "@iconify/react";
 import Swal from "sweetalert2";
-const AuthContext = createContext();
 import { account } from "../appwrite/config";
+import { ID } from "appwrite";
+
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
@@ -27,7 +29,7 @@ export const AuthProvider = ({ children }) => {
         Swal.fire({
           toast: true,
           icon: "error",
-          text: "Invlaid username or Email",
+          text: "Invalid username or Email",
           timer: 4000,
           position: "top",
           showConfirmButton: false,
@@ -50,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
 
     try {
-      await account.create(
+      const response = await account.create(
         ID.unique(),
         userInfo.email,
         userInfo.password,
@@ -64,7 +66,9 @@ export const AuthProvider = ({ children }) => {
       );
       let accountDetail = await account.get();
       setUser(accountDetail);
+      return response;
     } catch (err) {
+      console.error("Registration error:", err);
       // Check email duplicate error code.
       if (err.code == 409) {
         Swal.fire({
@@ -93,7 +97,7 @@ export const AuthProvider = ({ children }) => {
     account.createOAuth2Session(
       "google",
       "http://localhost:3000/home",
-      "http://localhost:3000/login",
+      "http://localhost:3000/login"
     );
     const userDetails = account.get();
     setUser(userDetails);
@@ -130,8 +134,7 @@ export const AuthProvider = ({ children }) => {
     try {
       let accountDetail = await account.get();
       setUser(accountDetail);
-    } catch (err) {
-    }
+    } catch (err) {}
     setLoading(false);
   };
 
@@ -149,8 +152,17 @@ export const AuthProvider = ({ children }) => {
       {loading ? (
         <div className="w-[100vw] h-[100vh] grid items-center justify-center bg-gray-50 overflow-hidden anmate-load">
           <div className="text-center app-text-color justify-items-center grid gap-4 mx-auto">
-            <h2 className="text-3xl">Joblier</h2>
-            <BarLoader loading={loading} />
+            <div className="flex text-5xl gap-2 items-center">
+              <Icon
+                icon="mingcute:group-line"
+                className="w-15 h-15 text-green-600"
+              />
+              <div
+                className="font-bold ml-2 text-green-600"
+              >
+                Joblier
+              </div>
+            </div>
           </div>
         </div>
       ) : (
@@ -163,3 +175,5 @@ export const AuthProvider = ({ children }) => {
 export const useAuth = () => {
   return useContext(AuthContext);
 };
+
+export default AuthContext;

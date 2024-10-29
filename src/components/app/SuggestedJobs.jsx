@@ -27,29 +27,29 @@ const SuggestedJobCard = ({ logo, company, title, days, applied }) => (
 );
 
 const SuggestedJobs = () => {
-  const suggestedJobs = [
+const suggestedJobs = [
     {
-      logo: '/api/placeholder/32/32',
-      company: 'GitLab',
-      title: 'Junior UI/UX Designer',
-      days: 1,
-      applied: 26,
+        logo: 'https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png',
+        company: 'GitLab',
+        title: 'Junior UI/UX Designer',
+        days: 1,
+        applied: 26,
     },
     {
-      logo: '/api/placeholder/32/32',
-      company: 'SpreadSimple',
-      title: 'Senior UI/UX Designer',
-      days: 2,
-      applied: 26,
+        logo: 'https://spreadsimple.com/favicon-32x32.png',
+        company: 'SpreadSimple',
+        title: 'Senior UI/UX Designer',
+        days: 2,
+        applied: 26,
     },
     {
-      logo: '/api/placeholder/32/32',
-      company: 'Sketch',
-      title: 'Junior UI/UX Designer',
-      days: 1,
-      applied: 26,
+        logo: 'https://sketch.com/images/pages/press/sketch-logo.svg',
+        company: 'Sketch',
+        title: 'Junior UI/UX Designer',
+        days: 1,
+        applied: 26,
     },
-  ];
+];
 
   return (
     <aside className='hidden lg:block w-64 xl:w-80 bg-white border-l border-gray-200 p-4 overflow-y-auto'>

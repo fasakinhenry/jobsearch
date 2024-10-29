@@ -16,7 +16,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           <X size={24} />
         </button>
       </div>
-      <button className='text-blue-500 mb-4'>Clear all</button>
+      <button className='text-green-500 mb-4'>Clear all</button>
 
       <div className='mb-6'>
         <h3 className='font-semibold mb-2'>Salary</h3>

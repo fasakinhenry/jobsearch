@@ -3,7 +3,11 @@ import {
   LightBulbIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
-import { GridBackground } from '../../assets/GridBackground';
+import { Icon } from '@iconify/react';
+import { NavLink } from 'react-router-dom';
+import gridBackground from '../../assets/images/gridbackground.svg';
+import hamburgerIcon from '../../assets/images/icons/hamburger.svg';
+import closeIcon from '../../assets/images/icons/close-icon.svg';
 
 // Importing all 12 avatars from assets/avatars
 import avatar_1 from '../../assets/images/avatars/avatar1.png';
@@ -36,56 +40,82 @@ const avatars = [
   avatar_12,
 ];
 
-const HamburgerIcon = ({ isOpen }) => (
-  <svg
-    width='40'
-    height='40'
-    viewBox='0 0 100 100'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <circle cx='50' cy='50' r='50' fill='#4ADE80' />
-    <rect
-      x='25'
-      y='30'
-      width='50'
-      height='10'
-      rx='5'
-      fill={isOpen ? 'transparent' : 'white'}
-    />
-    <rect x='25' y='45' width='50' height='10' rx='5' fill='white' />
-    <rect
-      x='25'
-      y='60'
-      width='50'
-      height='10'
-      rx='5'
-      fill={isOpen ? 'transparent' : 'white'}
-    />
-    {isOpen && (
-      <>
-        <rect
-          x='25'
-          y='30'
-          width='50'
-          height='10'
-          rx='5'
-          fill='white'
-          transform='rotate(45 50 50)'
-        />
-        <rect
-          x='25'
-          y='60'
-          width='50'
-          height='10'
-          rx='5'
-          fill='white'
-          transform='rotate(-45 50 50)'
-        />
-      </>
-    )}
-  </svg>
-);
+// export const GridBackground = () => (
+//   <svg
+//     width='100%'
+//     height='100%'
+//     xmlns='http://www.w3.org/2000/svg'
+//     className='absolute inset-0 z-0'
+//   >
+//     <defs>
+//       <pattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'>
+//         <path
+//           d='M 40 0 L 0 0 0 40'
+//           fill='none'
+//           stroke='rgba(0,0,0,0.05)'
+//           strokeWidth='1'
+//         />
+//       </pattern>
+//       <linearGradient id='fade' x1='0%' y1='0%' x2='0%' y2='100%'>
+//         <stop offset='0%' stopColor='white' stopOpacity='0' />
+//         <stop offset='100%' stopColor='white' stopOpacity='1' />
+//       </linearGradient>
+//     </defs>
+//     <rect width='100%' height='100%' fill='url(#grid)' />
+//     <rect width='100%' height='100%' fill='url(#fade)' />
+//   </svg>
+// );
+
+// const HamburgerIcon = ({ isOpen }) => (
+//   <svg
+//     width='40'
+//     height='40'
+//     viewBox='0 0 100 100'
+//     fill='none'
+//     xmlns='http://www.w3.org/2000/svg'
+//   >
+//     <circle cx='50' cy='50' r='50' fill='#4ADE80' />
+//     <rect
+//       x='25'
+//       y='30'
+//       width='50'
+//       height='10'
+//       rx='5'
+//       fill={isOpen ? 'transparent' : 'white'}
+//     />
+//     <rect x='25' y='45' width='50' height='10' rx='5' fill='white' />
+//     <rect
+//       x='25'
+//       y='60'
+//       width='50'
+//       height='10'
+//       rx='5'
+//       fill={isOpen ? 'transparent' : 'white'}
+//     />
+//     {isOpen && (
+//       <>
+//         <rect
+//           x='25'
+//           y='30'
+//           width='50'
+//           height='10'
+//           rx='5'
+//           fill='white'
+//           transform='rotate(45 50 50)'
+//         />
+//         <rect
+//           x='25'
+//           y='60'
+//           width='50'
+//           height='10'
+//           rx='5'
+//           fill='white'
+//           transform='rotate(-45 50 50)'
+//         />
+//       </>
+//     )}
+//   </svg>
+// );
 
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,10 +126,30 @@ const LandingPage = () => {
 
   return (
     <div className='relative min-h-screen bg-blue-50 font-sans overflow-hidden'>
-      <GridBackground />
+      {/* <img
+        src={GridBackground2}
+        alt='Grid Background'
+        className='absolute inset-0 z-0 w-full h-full'
+      /> */}
+      <img
+        src={gridBackground}
+        alt='Grid Background'
+        className='absolute inset-0 z-0 w-full h-full'
+      />
       <div className='container mx-auto px-4 relative z-10'>
         <header className='flex justify-between items-center py-4'>
-          <div className='text-xl md:text-2xl font-bold'>Joblier</div>
+        <div className='flex items-center'>
+            <Icon
+              icon='mingcute:group-line'
+              className='w-8 h-8 text-green-600'
+            />
+            <NavLink
+              to='/'
+              className='text-xl md:text-2xl font-bold ml-2 text-green-600'
+            >
+              Joblier
+            </NavLink>
+          </div>
           <nav className='hidden md:flex space-x-6'>
             <a href='/home' className='text-gray-600 hover:text-gray-900'>
               Home
@@ -134,15 +184,20 @@ const LandingPage = () => {
               className='md:hidden'
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <HamburgerIcon isOpen={isMenuOpen} />
+              <img
+                src={isMenuOpen ? closeIcon : hamburgerIcon}
+                alt='Menu Icon'
+                className='w-10 h-10'
+              />
             </button>
           </div>
         </header>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className='fixed inset-0 bg-green-500 z-50 flex flex-col justify-center items-center md:hidden'>
             <nav className='text-center'>
-              <a href='#' className='block text-white text-3xl mb-6'>
+              <a href='/home' className='block text-white text-3xl mb-6'>
                 Home
               </a>
               <a href='#' className='block text-white text-3xl mb-6'>
@@ -162,7 +217,11 @@ const LandingPage = () => {
               className='absolute top-4 right-4'
               onClick={() => setIsMenuOpen(false)}
             >
-              <HamburgerIcon isOpen={true} />
+              <img
+                src={closeIcon}
+                alt='Close Menu Icon'
+                className='w-10 h-10'
+              />
             </button>
           </div>
         )}
