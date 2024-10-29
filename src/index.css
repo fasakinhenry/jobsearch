@@ -67,6 +67,17 @@ input {
   height: 0;
 }
 
+::-webkit-scrollbar {
+  background-color: none;
+  width: 5px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--app-dark-green);
+  border-radius: 5px;
+}
+
 .scale:hover {
   transform: scale(1.04);
 }
