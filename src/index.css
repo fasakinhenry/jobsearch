@@ -75,7 +75,7 @@ input {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--app-dark-green);
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 .scale:hover {
