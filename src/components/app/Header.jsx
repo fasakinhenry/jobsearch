@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className='bg-white border-b border-gray-200 p-4'>
       <div className='flex items-center justify-between'>
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center  space-x-4'>
           <button
             className='md:hidden'
             onClick={() => setIsNavOpen(!isNavOpen)}
@@ -32,8 +32,8 @@ const Header = () => {
             </NavLink>
           </div>
         </div>
-        <nav className={`${isNavOpen ? 'block' : 'hidden'} md:block`}>
-          <ul className='flex space-x-6'>
+        <nav className={`${isNavOpen ? 'block' : 'hidden'} md:block `}>
+          <ul className='flex space-x-6 text-[1.1rem]'>
             <li>
               <NavLink
                 to='/home'
@@ -80,13 +80,13 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className='flex items-center space-x-4'>
+        <div className='text-2xl flex items-center space-x-4'>
           <Icon
             icon='mingcute:notification-newdot-line'
             className='text-gray-600'
           />
           <Icon icon='mingcute:message-3-line' className='text-gray-600' />
-          <div className='w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center'>
+          <div className='w-8 h-8 bg-gray-200 p-[0.3rem] rounded-full flex items-center justify-center'>
             <Icon icon='mingcute:user-2-line' className='text-gray-600' />
           </div>
         </div>
