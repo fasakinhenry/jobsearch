@@ -32,7 +32,7 @@ const Header = ({ onMenuClick }) => {
           <ul className='flex space-x-6'>
             <li>
               <NavLink
-                to='/'
+                to='/home'
                 className={({ isActive }) =>
                   isActive ? activeClassName : inactiveClassName
                 }
