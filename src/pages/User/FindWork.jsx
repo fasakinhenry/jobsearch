@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { JobFilters, JobCard } from '../../components/FindJob';
+import AppLayout from '../../layouts/AppLayout';
 
 const FindWork = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -75,81 +76,85 @@ const FindWork = () => {
   };
 
   return (
-    <div className='min-h-screen bg-gray-50'>
-      <div className='max-w-7xl mx-auto px-4 py-8'>
-        <div className='mb-8'>
-          <h1 className='text-3xl font-bold mb-6'>Find Your Dream Job Here</h1>
-          <form
-            onSubmit={handleSearch}
-            className='flex flex-col md:flex-row gap-4'
-          >
-            <div className='flex-1 relative'>
-              <Icon
-                icon='mingcute:search-3-line'
-                className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
-              />
-              <input
-                type='text'
-                placeholder='Job title or keyword'
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500'
-              />
-            </div>
-            <div className='flex-1 relative'>
-              <Icon
-                icon='mingcute:map-pin-line'
-                className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
-              />
-              <input
-                type='text'
-                placeholder='Add country or city'
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500'
-              />
-            </div>
-            <button
-              type='submit'
-              className='bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors'
+    <AppLayout>
+      <div className='min-h-screen bg-gray-50'>
+        <div className='max-w-7xl mx-auto px-4 py-8'>
+          <div className='mb-8'>
+            <h1 className='text-3xl font-bold mb-6'>
+              Find Your Dream Job Here
+            </h1>
+            <form
+              onSubmit={handleSearch}
+              className='flex flex-col md:flex-row gap-4'
             >
-              Search
-            </button>
-          </form>
-        </div>
-
-        <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
-          <aside className='lg:col-span-1'>
-            <div className='sticky top-24'>
-              <JobFilters filters={filters} setFilters={setFilters} />
-            </div>
-          </aside>
-
-          <main className='lg:col-span-3'>
-            <div className='flex justify-between items-center mb-6'>
-              <h2 className='text-xl font-semibold'>Recommended jobs</h2>
-              <select className='border border-gray-200 rounded-lg px-4 py-2'>
-                <option>Most recent</option>
-                <option>Most relevant</option>
-                <option>Highest paid</option>
-              </select>
-            </div>
-
-            {loading ? (
-              <div className='flex justify-center items-center h-64'>
-                <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600'></div>
+              <div className='flex-1 relative'>
+                <Icon
+                  icon='mingcute:search-3-line'
+                  className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
+                />
+                <input
+                  type='text'
+                  placeholder='Job title or keyword'
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                />
               </div>
-            ) : (
-              <div className='space-y-4'>
-                {jobs.map((job) => (
-                  <JobCard key={job.id} job={job} />
-                ))}
+              <div className='flex-1 relative'>
+                <Icon
+                  icon='mingcute:map-pin-line'
+                  className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
+                />
+                <input
+                  type='text'
+                  placeholder='Add country or city'
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                />
               </div>
-            )}
-          </main>
+              <button
+                type='submit'
+                className='bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors'
+              >
+                Search
+              </button>
+            </form>
+          </div>
+
+          <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
+            <aside className='lg:col-span-1'>
+              <div className='sticky top-24'>
+                <JobFilters filters={filters} setFilters={setFilters} />
+              </div>
+            </aside>
+
+            <main className='lg:col-span-3'>
+              <div className='flex justify-between items-center mb-6'>
+                <h2 className='text-xl font-semibold'>Recommended jobs</h2>
+                <select className='border border-gray-200 rounded-lg px-4 py-2'>
+                  <option>Most recent</option>
+                  <option>Most relevant</option>
+                  <option>Highest paid</option>
+                </select>
+              </div>
+
+              {loading ? (
+                <div className='flex justify-center items-center h-64'>
+                  <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600'></div>
+                </div>
+              ) : (
+                <div className='space-y-4'>
+                  {jobs.map((job) => (
+                    <JobCard key={job.id} job={job} />
+                  ))}
+                </div>
+              )}
+            </main>
+          </div>
         </div>
       </div>
-    </div>
+    </AppLayout>
   );
 };
 
