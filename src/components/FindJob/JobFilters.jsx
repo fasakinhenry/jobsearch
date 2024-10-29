@@ -72,3 +72,5 @@ const JobFilters = ({ filters, setFilters }) => {
     </div>
   );
 };
+
+export default JobFilters;

@@ -49,3 +49,5 @@ const JobCard = ({ job }) => {
     </div>
   );
 };
+
+export default JobCard;
