@@ -3,6 +3,8 @@ import {
   LightBulbIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
+import { Icon } from '@iconify/react';
+import { NavLink } from 'react-router-dom';
 import gridBackground from '../../assets/images/gridbackground.svg';
 import hamburgerIcon from '../../assets/images/icons/hamburger.svg';
 import closeIcon from '../../assets/images/icons/close-icon.svg';
@@ -136,7 +138,18 @@ const LandingPage = () => {
       />
       <div className='container mx-auto px-4 relative z-10'>
         <header className='flex justify-between items-center py-4'>
-          <div className='text-xl md:text-2xl font-bold'>Joblier</div>
+        <div className='flex items-center'>
+            <Icon
+              icon='mingcute:group-line'
+              className='w-8 h-8 text-green-600'
+            />
+            <NavLink
+              to='/'
+              className='text-xl md:text-2xl font-bold ml-2 text-green-600'
+            >
+              Joblier
+            </NavLink>
+          </div>
           <nav className='hidden md:flex space-x-6'>
             <a href='/home' className='text-gray-600 hover:text-gray-900'>
               Home
