@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Bell, MessageCircle, Menu } from 'lucide-react';
 import { Icon } from '@iconify/react';
 
-const Header = ({ onMenuClick }) => {
+const Header = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const activeClassName = 'text-green-600 flex items-center';
   const inactiveClassName =
-    'text-gray-600 flex items-center hover:text-green-600 transition-colors';
+    'text-gray-600 flex items-center hover:text-green-600';
 
   return (
     <header className='bg-white border-b border-gray-200 p-4'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-4'>
-          <button className='md:hidden' onClick={onMenuClick}>
+          <button
+            className='md:hidden'
+            onClick={() => setIsNavOpen(!isNavOpen)}
+          >
             <Menu size={24} />
           </button>
           <div className='flex items-center'>
@@ -28,7 +32,7 @@ const Header = ({ onMenuClick }) => {
             </NavLink>
           </div>
         </div>
-        <nav className='hidden md:block'>
+        <nav className={`${isNavOpen ? 'block' : 'hidden'} md:block`}>
           <ul className='flex space-x-6'>
             <li>
               <NavLink
@@ -77,8 +81,6 @@ const Header = ({ onMenuClick }) => {
           </ul>
         </nav>
         <div className='flex items-center space-x-4'>
-          {/* <Bell className='text-gray-600' />
-          <MessageCircle className='text-gray-600' /> */}
           <Icon
             icon='mingcute:notification-newdot-line'
             className='text-gray-600'
