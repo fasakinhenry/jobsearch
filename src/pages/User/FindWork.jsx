@@ -77,9 +77,9 @@ const FindWork = () => {
 
   return (
     <AppLayout>
-      <div className='min-h-screen bg-gray-50'>
-        <div className='max-w-7xl mx-auto px-4 py-8'>
-          <div className='mb-8'>
+      <div className='min-h-screen w-full bg-gray-100'>
+        <div className='w-full'>
+          <div className='mb-8 bg-gradient-to-r from-green-600 to-green-500 py-8 px-4 text-white'>
             <h1 className='text-3xl font-bold mb-6'>
               Find Your Dream Job Here
             </h1>
@@ -87,42 +87,42 @@ const FindWork = () => {
               onSubmit={handleSearch}
               className='flex flex-col md:flex-row gap-4'
             >
-              <div className='flex-1 relative'>
+              <div className='flex-1 relative text-white'>
                 <Icon
                   icon='mingcute:search-3-line'
-                  className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
+                  className='absolute left-3 top-1/2 transform -translate-y-1/2 text-white'
                 />
                 <input
                   type='text'
                   placeholder='Job title or keyword'
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full pl-10 pr-4 py-3 rounded-lg border border-white focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-white'
                 />
               </div>
               <div className='flex-1 relative'>
                 <Icon
                   icon='mingcute:map-pin-line'
-                  className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
+                  className='absolute left-3 top-1/2 transform -translate-y-1/2 text-white'
                 />
                 <input
                   type='text'
                   placeholder='Add country or city'
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  className='w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-white'
                 />
               </div>
               <button
                 type='submit'
-                className='bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors'
+                className='bg-green-800 hover:bg-green-700 text-white px-8 py-3 rounded-lg transition-colors'
               >
                 Search
               </button>
             </form>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
+          <div className='grid grid-cols-1 lg:grid-cols-4 gap-8 px-4'>
             <aside className='lg:col-span-1'>
               <div className='sticky top-24'>
                 <JobFilters filters={filters} setFilters={setFilters} />
@@ -132,7 +132,7 @@ const FindWork = () => {
             <main className='lg:col-span-3'>
               <div className='flex justify-between items-center mb-6'>
                 <h2 className='text-xl font-semibold'>Recommended jobs</h2>
-                <select className='border border-gray-200 rounded-lg px-4 py-2'>
+                <select className='border border-gray-200 rounded-full px-4 py-2 pr-5'>
                   <option>Most recent</option>
                   <option>Most relevant</option>
                   <option>Highest paid</option>
