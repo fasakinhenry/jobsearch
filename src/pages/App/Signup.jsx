@@ -14,8 +14,6 @@ const Signup = () => {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const { registerUser } = useAuth();
-
   // Individual states for each field
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -27,12 +25,14 @@ const Signup = () => {
   const [bio, setBio] = useState('');
 
   // Create a user object
-  const [user, setUser] = useState({
+  const [thisUser, setThisUser] = useState({
     name: "",
     email: "",
     password: "",
   });
 
+  const { user, registerUser } = useAuth();
+  
   const handleNext = () => {
     if (step === 1 && !name) return alert('Please enter your name.');
     if (step === 2 && !linkedIn)
@@ -52,21 +52,26 @@ const Signup = () => {
     setLoading(true);
     setError('');
 
-    const promise = account.create(ID.unique(), user.email, user.password, user.name);
-    promise.then(
-      function (response) {
-        console.log(response);
-        navigate('/home', {
-          state: {
-            userId: response?.$id,
-            name: response?.name,
-          },
-        }); //success
-      },
-      function (err) {
-        console.log(err); //failure
-      }
-    );
+    registerUser({
+      email,
+      password,
+      username: name
+    })
+    // const promise = account.create(ID.unique(), thisUser.email, thisUser.password, thisUser.name);
+    // promise.then(
+    //   function (response) {
+    //     console.log(response);
+    //     navigate('/home', {
+    //       state: {
+    //         userId: response?.$id,
+    //         name: response?.name,
+    //       },
+    //     }); //success
+    //   },
+    //   function (err) {
+    //     console.log(err); //failure
+    //   }
+    // );
 
     // const userInfo = {
     //   email: email.trim(),
