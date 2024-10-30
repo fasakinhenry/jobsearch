@@ -23,7 +23,7 @@ const Login = () => {
       email,
       password  
     }
-    loginUser(userInfo)
+    loginUser(userInfo);
   }
 
     // useEffect(() => {
