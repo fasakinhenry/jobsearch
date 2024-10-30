@@ -12,7 +12,7 @@ const Community = () => {
         <Sidebar />
         <div className='flex-1 overflow-y-auto bg-gray-50'>
           <Routes>
-            <Route path='/' element={<CommunityHome />} />
+            <Route path='/home' element={<CommunityHome />} />
             <Route path='/posts' element={<Posts />} />
           </Routes>
         </div>

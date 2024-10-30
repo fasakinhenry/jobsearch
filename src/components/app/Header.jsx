@@ -69,7 +69,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to='/community'
+                to='/community/home'
                 className={({ isActive }) =>
                   isActive ? activeClassName : inactiveClassName
                 }
