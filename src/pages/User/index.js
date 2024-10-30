@@ -6,6 +6,7 @@ import Companies from './Companies';
 import MyJobs from './MyJobs';
 import CreateJob from './CreateJob';
 import FindWork from './FindWork';
+import Community from './Community';
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Companies,
   Profile,
   FindWork,
+  Community,
 };

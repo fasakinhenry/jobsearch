@@ -14,6 +14,7 @@ import {
   Companies,
   Messages,
   FindWork,
+  Community,
 } from './pages/User';
 import { NotFound } from './pages';
 import PrivateRoutes from './utils/PrivateRoutes';
@@ -30,6 +31,7 @@ export default function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/notifications' element={<Notifications />} />
           <Route path='/companies' element={<Companies />} />
+          <Route path='/community/*' element={<Community />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/find-work' element={<FindWork />} />
           <Route path='/my-jobs/create' element={<CreateJob />} />
