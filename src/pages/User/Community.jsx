@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AuthLayout from '../layouts/AuthLayout';
-import Sidebar from '../components/community/Sidebar';
-import CommunityHome from '../components/community/CommunityHome';
-import Posts from '../components/community/Posts';
+import AppLayout from '../../layouts/AppLayout';
+import Sidebar from '../../components/community/Sidebar';
+import CommunityHome from '../../components/community/CommunityHome';
+import Posts from '../../components/community/Posts';
 
 const Community = () => {
   return (
