@@ -7,7 +7,7 @@ import Posts from '../../components/community/Posts';
 
 const Community = () => {
   return (
-    <AuthLayout>
+    <AppLayout>
       <div className='flex h-full'>
         <Sidebar />
         <div className='flex-1 overflow-y-auto bg-gray-50'>
@@ -17,7 +17,7 @@ const Community = () => {
           </Routes>
         </div>
       </div>
-    </AuthLayout>
+    </AppLayout>
   );
 };
 
