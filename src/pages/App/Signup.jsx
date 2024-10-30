@@ -1,15 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import gridBackground from '../../assets/images/gridbackground.svg';
 import { useNavigate } from 'react-router-dom';
-import { EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
-import Google from '../../assets/images/icons/Google.svg';
 import { useAuth } from '../../context/AuthContext';
-import { account } from '../../appwrite/config';
-import { ID } from 'appwrite';
 
 const Signup = () => {
+  const { user, registerUser } = useAuth();
+
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -31,7 +28,6 @@ const Signup = () => {
     password: "",
   });
 
-  const { user, registerUser } = useAuth();
   
   const handleNext = () => {
     if (step === 1 && !name) return alert('Please enter your name.');
@@ -46,6 +42,12 @@ const Signup = () => {
   const handleBack = () => {
     setStep(step - 1);
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate('/home')
+    }
+  },[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();

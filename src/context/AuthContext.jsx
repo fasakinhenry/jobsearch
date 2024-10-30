@@ -82,8 +82,8 @@ export const AuthProvider = ({ children }) => {
       } else {
         Swal.fire({
           toast: true,
-          text: "Unable to reach server. Try again",
-          icon: "error",
+          text: "User has been succesffully logged in",
+          icon: "success",
           position: "top",
           showConfirmButton: false,
           timer: 2000,
@@ -91,6 +91,8 @@ export const AuthProvider = ({ children }) => {
       }
     }
     setLoading(false);
+    const loggedUser = await account.get()
+    setUser(loggedUser)
   };
 
   const googleSignIn = async () => {
