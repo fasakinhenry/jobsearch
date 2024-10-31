@@ -10,7 +10,7 @@ const Header = () => {
   const inactiveClassName =
     "text-gray-600 flex items-center hover:text-green-600";
   
-  const { user } = useAuth();
+  const { user, logoutUser } = useAuth();
 
   return (
     <header className="bg-white border-b border-gray-200 p-4">
@@ -31,7 +31,7 @@ const Header = () => {
               to="/"
               className="text-xl md:text-2xl font-bold ml-2 text-green-600"
             >
-              {user ? user.username : 'Joblier'}
+              {user ? user.name : 'Joblier'}
             </NavLink>
           </div>
         </div>
@@ -92,6 +92,7 @@ const Header = () => {
           <div className="w-8 h-8 bg-gray-200 p-[0.3rem] rounded-full flex items-center justify-center">
             <Icon icon="mingcute:user-2-line" className="text-gray-600" />
           </div>
+          <button onClick={logoutUser} className="p-2 rounded-md text-sm text-white hover:bg-red-400 bg-green-400">Logout</button>
         </div>
       </div>
     </header>

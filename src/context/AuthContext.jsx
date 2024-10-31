@@ -9,6 +9,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+
   useEffect(() => {
     checkUserStatus();
   }, []);
@@ -16,13 +17,12 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (userInfo) => {
     setLoading(true);
     try {
+      let accountDetail = await account.get();
+      console.log(accountDetail);
       await account.createEmailPasswordSession(
         userInfo.email,
         userInfo.password
       );
-
-      let accountDetail = await account.get();
-      console.log(accountDetail);
       setUser(accountDetail);
     } catch (err) {
       if (err.code == 401) {
@@ -48,51 +48,32 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   };
 
+  const logoutUser = () => {
+    account.deleteSession("current");
+    setUser(null);
+  };
+
   const registerUser = async (userInfo) => {
     setLoading(true);
-
     try {
-      const response = await account.create(
+      await account.create(
         ID.unique(),
         userInfo.email,
         userInfo.password,
         userInfo.username
       );
 
-      // Logs user in after creating account
+      // Logs use in after creating account
       await account.createEmailPasswordSession(
         userInfo.email,
         userInfo.password
       );
       let accountDetail = await account.get();
       setUser(accountDetail);
-      return response;
     } catch (err) {
-      console.error("Registration error:", err);
-      // Check email duplicate error code.
-      if (err.code == 409) {
-        Swal.fire({
-          toast: true,
-          text: "Email Address has already been taken",
-          position: "top",
-          icon: "error",
-          showConfirmButton: false,
-          timer: 4000,
-        });
-      } else {
-        Swal.fire({
-          toast: true,
-          text: "User has successfuly created an account",
-          icon: "success",
-          position: "top",
-          showConfirmButton: false,
-          timer: 2000,
-        });
-      }
+      console.error(err);
     }
     setLoading(false);
-    const loggedUser = await account.get()
-    setUser(loggedUser)
   };
 
   const googleSignIn = async () => {
@@ -127,11 +108,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logoutUser = () => {
-    account.deleteSession("current");
-    setUser(null);
-  };
-
   const checkUserStatus = async () => {
     try {
       let accountDetail = await account.get();
@@ -159,11 +135,7 @@ export const AuthProvider = ({ children }) => {
                 icon="mingcute:group-line"
                 className="w-15 h-15 text-green-600"
               />
-              <div
-                className="font-bold ml-2 text-green-600"
-              >
-                Joblier
-              </div>
+              <div className="font-bold ml-2 text-green-600">Joblier</div>
             </div>
           </div>
         </div>

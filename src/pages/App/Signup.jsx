@@ -6,8 +6,14 @@ import { useAuth } from '../../context/AuthContext';
 
 const Signup = () => {
   const { user, registerUser } = useAuth();
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate('/home')
+    }
+  }, [])
+  
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -43,11 +49,7 @@ const Signup = () => {
     setStep(step - 1);
   };
 
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate('/home')
-  //   }
-  // },[])
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
