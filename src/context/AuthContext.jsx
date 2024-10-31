@@ -82,7 +82,7 @@ export const AuthProvider = ({ children }) => {
       } else {
         Swal.fire({
           toast: true,
-          text: "User has been succesffully logged in",
+          text: "User has successfuly created an account",
           icon: "success",
           position: "top",
           showConfirmButton: false,
