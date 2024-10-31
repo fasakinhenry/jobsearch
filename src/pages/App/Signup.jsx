@@ -43,11 +43,11 @@ const Signup = () => {
     setStep(step - 1);
   };
 
-  useEffect(() => {
-    if (user) {
-      navigate('/home')
-    }
-  },[])
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate('/home')
+  //   }
+  // },[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
