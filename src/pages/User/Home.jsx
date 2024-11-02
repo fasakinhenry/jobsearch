@@ -7,10 +7,12 @@ import {
   JobStatus,
   TopSkills,
 } from '../../components/app';
+import { useAuth } from '../../context/AuthContext';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const {user} = useAuth()
 
   return (
     <div className='flex flex-col h-screen'>
@@ -42,7 +44,7 @@ const Home = () => {
           <div className='relative z-10'>
             <div className='bg-gradient-to-r from-green-600 to-green-500 text-white rounded-lg p-4 md:p-6 mb-6'>
               <h1 className='text-xl md:text-2xl font-bold mb-2'>
-                Find your dream job with AI ✨
+              {user.name}, Find your dream job with AI ✨
               </h1>
               <p className='mb-4 text-sm md:text-base'>
                 Let our AI-powered job matching system find the perfect

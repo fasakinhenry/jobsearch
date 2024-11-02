@@ -31,7 +31,7 @@ const Header = () => {
               to="/"
               className="text-xl md:text-2xl font-bold ml-2 text-green-600"
             >
-              {user ? user.name : 'Joblier'}
+              Joblier
             </NavLink>
           </div>
         </div>
