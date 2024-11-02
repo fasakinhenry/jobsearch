@@ -3,6 +3,8 @@ import gridBackground from '../../assets/images/gridbackground.svg';
 import { useNavigate } from 'react-router-dom';
 import { Briefcase } from 'iconsax-react';
 import { useAuth } from '../../context/AuthContext';
+import { ID } from 'appwrite';
+import { client, account } from '../../appwrite/config';
 
 const Signup = () => {
   const { user, registerUser } = useAuth();
@@ -29,12 +31,11 @@ const Signup = () => {
 
   // Create a user object
   const [thisUser, setThisUser] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
   });
 
-  
   const handleNext = () => {
     if (step === 1 && !name) return alert('Please enter your name.');
     if (step === 2 && !linkedIn)
@@ -49,18 +50,26 @@ const Signup = () => {
     setStep(step - 1);
   };
 
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
-    registerUser({
-      email,
-      password,
-      username: name
-    })
+    // registerUser({
+    //   email: email,
+    //   password: password,
+    //   username: name,
+    // });
+
+    const result = await account.create(
+      ID.unique(), // userId
+      'email@example.com', // email
+      'Admin1234', // password
+      'Sola' // name (optional)
+    );
+
+    console.log(result);
+
     // const promise = account.create(ID.unique(), thisUser.email, thisUser.password, thisUser.name);
     // promise.then(
     //   function (response) {
