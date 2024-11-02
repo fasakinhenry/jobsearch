@@ -17,12 +17,12 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (userInfo) => {
     setLoading(true);
     try {
-      let accountDetail = await account.get();
-      console.log(accountDetail);
       await account.createEmailPasswordSession(
         userInfo.email,
         userInfo.password
       );
+      let accountDetail = await account.get();
+      console.log(accountDetail);
       setUser(accountDetail);
     } catch (err) {
       if (err.code == 401) {
