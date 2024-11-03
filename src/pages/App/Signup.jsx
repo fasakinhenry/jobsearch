@@ -129,7 +129,7 @@ const Signup = () => {
               Create your account 🖐
             </h2>
             {error && <p className='text-red-500'>{error}</p>}
-            {loading && <p>Loading...</p>}
+            {loading && <p className='text-center mb-3'>Loading...</p>}
 
             {step === 1 && (
               <div className='grid gap-2'>
