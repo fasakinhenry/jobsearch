@@ -2,6 +2,8 @@
 
 This project is a JobSearch application built with Reac, Tailwind and Appwrite. It allows users to search for jobs, view job details, and apply for jobs directly through the app.
 
+> This Project was built during the [Appwrite Hackathon](https://github.com/appwrite-community/htf24-hackathon-submissions)
+
 ## Why we built Joblier
 
 From my personal experience, the best ways to get jobs are by following three startegies that works 100% of the time. These strategies are:
