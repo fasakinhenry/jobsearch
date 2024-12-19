@@ -1,4 +1,6 @@
-# JobSearch App
+![jsm-cover](https://github.com/user-attachments/assets/94c49085-f0a6-4e1d-96ac-0b6255158cf0)
+
+# Job Search App
 
 This project is a JobSearch application built with React, Tailwind, and Appwrite. It allows users to search for jobs, view job details, and apply for jobs directly through the app.
 
